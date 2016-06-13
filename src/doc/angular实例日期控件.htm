@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>angular实例日期控件【datepicker】|FE-国内最好的学习交流平台 </title>
+<meta name="keywords" content="html,javascript,nodeJs,angular.js 在线演示，源码下载">
+<meta name="description" content="JavaScript 是属于网络的脚本语言！
+JavaScript 被数百万计的网页用来改进设计、验证表单、检测浏览器、创建cookies，以及更多的应用。
+JavaScript 是因特网上最流行的脚本语言。
+JavaScript 很容易使用！你一定会喜欢它的！
+你喜欢javascript 那么你一定会喜欢FE-前端网">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="angular%E5%AE%9E%E4%BE%8B%E6%97%A5%E6%9C%9F%E6%8E%A7%E4%BB%B6_files/style.css">
+<link rel="shortcut icon" type="image/x-icon" href="http://www.html5jq.com/templets/default/images/minLogo.jpg">
+<link rel="stylesheet" type="text/css" href="angular%E5%AE%9E%E4%BE%8B%E6%97%A5%E6%9C%9F%E6%8E%A7%E4%BB%B6_files/shCoreDefault.css"> 
+<script src="angular%E5%AE%9E%E4%BE%8B%E6%97%A5%E6%9C%9F%E6%8E%A7%E4%BB%B6_files/ucjm_002.htm" async="" type="text/javascript"></script><script src="angular%E5%AE%9E%E4%BE%8B%E6%97%A5%E6%9C%9F%E6%8E%A7%E4%BB%B6_files/ucjm_003.htm" async="" type="text/javascript"></script><script src="angular%E5%AE%9E%E4%BE%8B%E6%97%A5%E6%9C%9F%E6%8E%A7%E4%BB%B6_files/ucjm.htm" async="" type="text/javascript"></script><script src="angular%E5%AE%9E%E4%BE%8B%E6%97%A5%E6%9C%9F%E6%8E%A7%E4%BB%B6_files/ucjm.txt" async="" type="text/javascript"></script><script type="text/javascript" src="angular%E5%AE%9E%E4%BE%8B%E6%97%A5%E6%9C%9F%E6%8E%A7%E4%BB%B6_files/jquery-1.js"></script>
+<script type="text/javascript" src="angular%E5%AE%9E%E4%BE%8B%E6%97%A5%E6%9C%9F%E6%8E%A7%E4%BB%B6_files/floatingHint.js"></script>
+ <script type="text/javascript" src="angular%E5%AE%9E%E4%BE%8B%E6%97%A5%E6%9C%9F%E6%8E%A7%E4%BB%B6_files/shCore.js"></script>
+<script src="angular%E5%AE%9E%E4%BE%8B%E6%97%A5%E6%9C%9F%E6%8E%A7%E4%BB%B6_files/share.js"></script><link href="angular%E5%AE%9E%E4%BE%8B%E6%97%A5%E6%9C%9F%E6%8E%A7%E4%BB%B6_files/share_style0_24.css" rel="stylesheet"><link href="angular%E5%AE%9E%E4%BE%8B%E6%97%A5%E6%9C%9F%E6%8E%A7%E4%BB%B6_files/share_popup.css" rel="stylesheet"><link href="angular%E5%AE%9E%E4%BE%8B%E6%97%A5%E6%9C%9F%E6%8E%A7%E4%BB%B6_files/select_share.css" rel="stylesheet"></head>
+<body><div style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;" id="BAIDU_DUP_fp_wrapper"><iframe style="width: 0px; height: 0px; visibility: hidden; display: none;" src="angular%E5%AE%9E%E4%BE%8B%E6%97%A5%E6%9C%9F%E6%8E%A7%E4%BB%B6_files/o.htm" id="BAIDU_DUP_fp_iframe"></iframe></div>
+<section id="loading"></section>
+<header class="header">
+	<div class="headerNav">
+		<h2 class="logo">html5,jquery</h2>
+		<nav class="navRight">
+			<ul>
+				<li><a href="http://www.html5jq.com/">首页</a></li>
+				<li class="nav-hover currentPage"><a href="http://www.html5jq.com/fe/angular_node/">angular/node</a></li>
+				<li><a href="http://www.html5jq.com/fe/javascript_jQuery/">javascript/jQuery</a></li>
+      			
+				<li><a href="http://www.html5jq.com/fe/html5_yidongweb/">html5/移动web</a></li>
+      			
+				<li><a href="http://www.html5jq.com/fe/hulianwangzuixinzixun/">互联网最新资讯</a></li>
+      			
+				<li><a href="http://www.html5jq.com/fe/guanyuzhanchang/">关于站长</a></li>
+      			
+			</ul>
+	</nav>
+	</div>
+</header>
+<section id="banner" class="banner">  
+    <section style="width: 6332px; left: 0px;" id="bannerBox">  
+        <section style="width: 1583px;" class="fcon">
+            <a href="###"><img data-bd-imgshare-binded="1" src="angular%E5%AE%9E%E4%BE%8B%E6%97%A5%E6%9C%9F%E6%8E%A7%E4%BB%B6_files/banner_page_bg.jpg" style="opacity: 1; "></a>
+        </section>
+         
+        <section style="width: 1583px;" class="fcon">
+            <a href="###"><img data-bd-imgshare-binded="1" src="angular%E5%AE%9E%E4%BE%8B%E6%97%A5%E6%9C%9F%E6%8E%A7%E4%BB%B6_files/bg2.jpg" style="opacity: 1; "></a>
+        </section>
+         
+        <section style="width: 1583px;" class="fcon">
+            <a href="###"><img data-bd-imgshare-binded="1" src="angular%E5%AE%9E%E4%BE%8B%E6%97%A5%E6%9C%9F%E6%8E%A7%E4%BB%B6_files/bg3.jpg" style="opacity: 1; "></a>
+        </section>  
+    <section style="width: 1583px;" class="fcon">
+            <a href="###"><img data-bd-imgshare-binded="1" src="angular%E5%AE%9E%E4%BE%8B%E6%97%A5%E6%9C%9F%E6%8E%A7%E4%BB%B6_files/banner_page_bg.jpg" style="opacity: 1; "></a>
+        </section></section>
+    <section class="currentLink">  
+        <a href="javascript:void(0)" hidefocus="true" class=""></a>
+        <a class="current" href="javascript:void(0)" hidefocus="true"></a>
+        <a class="" href="javascript:void(0)" hidefocus="true"></a>
+    </section>   
+    <span class="prev"></span>   
+    <span class="next"></span>    
+</section>
+<section class="content">
+	<aside class="asideMain">
+		<section class="paperTitle">
+			<h1 class="mianTitle">angular实例日期控件【datepicker】</h1>
+			<p><span>html5jq.com</span> <span>作者：十三把刀丶</span> 时间：<span>2014-11-27</span>
+       <span>点击: <script src="angular%E5%AE%9E%E4%BE%8B%E6%97%A5%E6%9C%9F%E6%8E%A7%E4%BB%B6_files/count.htm"></script>16431</span>
+       </p>
+		</section>
+		<section>
+<script type="text/javascript">
+var cpro_id="u1951243";
+(window["cproStyleApi"] = window["cproStyleApi"] || {})[cpro_id]={at:"3",rsi0:"725",rsi1:"100",pat:"6",tn:"baiduCustNativeAD",rss1:"#FFFFFF",conBW:"1",adp:"1",ptt:"0",titFF:"%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91",titFS:"",rss2:"#000000",titSU:"0",ptbg:"90",piw:"0",pih:"0",ptp:"0"}
+</script>
+<script src="angular%E5%AE%9E%E4%BE%8B%E6%97%A5%E6%9C%9F%E6%8E%A7%E4%BB%B6_files/c.js" type="text/javascript"></script><div id="BAIDU_SSP__wrapper_u1951243_0"></div>
+
+
+		</section>
+		<section>
+			
+			<p class="paper"></p>
+			<section class="downBtnBox">
+				<a class="lockBtn" target="_blank" href="javascript:void(0)" onclick="runCode('code')">查看演示	</a> <a target="_blank" class="downBtn" href="javascript:void(0)">下载源码</a>
+			</section>
+		</section>
+<!-- 		<pre class="brush: js; ruler: true; first-line: 10; highlight: [2, 4, 6]">
+				
+		</pre> -->
+		<p>angular bootstrap.ui &nbsp;组合的日期控件&nbsp;</p><p>head部分：</p><div><div id="highlighter_230194" class="syntaxhighlighter  html"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="html plain">&lt;</code><code class="html keyword">link</code>&nbsp;<code class="html color1">rel</code><code class="html plain">=</code><code class="html string">"stylesheet"</code>&nbsp;<code class="html color1">href</code><code class="html plain">=</code><code class="html string">"<a href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css">http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css</a>"</code><code class="html plain">&gt;</code></div><div class="line number2 index1 alt1"><code class="html plain">&lt;</code><code class="html keyword">script</code>&nbsp;<code class="html color1">src</code><code class="html plain">=</code><code class="html string">"<a href="http://www.w3cschool.cc/try/angularjs/1.2.5/angular.min.js">http://www.w3cschool.cc/try/angularjs/1.2.5/angular.min.js</a>"</code><code class="html plain">&gt;&lt;/</code><code class="html keyword">script</code><code class="html plain">&gt;</code></div><div class="line number3 index2 alt2"><code class="html plain">&lt;</code><code class="html keyword">script</code>&nbsp;<code class="html color1">src</code><code class="html plain">=</code><code class="html string">"<a href="http://cdn.bootcss.com/angular-ui-bootstrap/0.11.2/ui-bootstrap-tpls.js">http://cdn.bootcss.com/angular-ui-bootstrap/0.11.2/ui-bootstrap-tpls.js</a>"</code><code class="html plain">&gt;&lt;/</code><code class="html keyword">script</code><code class="html plain">&gt;</code></div></div></td></tr></tbody></table></div></div><p>html部分：</p><div><div id="highlighter_99030" class="syntaxhighlighter  html"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div><div class="line number32 index31 alt1">32</div><div class="line number33 index32 alt2">33</div><div class="line number34 index33 alt1">34</div><div class="line number35 index34 alt2">35</div><div class="line number36 index35 alt1">36</div><div class="line number37 index36 alt2">37</div><div class="line number38 index37 alt1">38</div><div class="line number39 index38 alt2">39</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="html plain">&lt;</code><code class="html keyword">body</code>&nbsp;<code class="html color1">ng-app</code><code class="html plain">=</code><code class="html string">"myApp"</code>&nbsp;<code class="html color1">style</code><code class="html plain">=</code><code class="html string">"background:#4A4A4A"</code>&nbsp;<code class="html color1">class</code><code class="html plain">=</code><code class="html string">"row"</code><code class="html plain">&gt;</code></div><div class="line number2 index1 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">div</code>&nbsp;<code class="html color1">style</code><code class="html plain">=</code><code class="html string">"color:#fff;&nbsp;font-size:30px;&nbsp;font-weight:bold;&nbsp;text-shadow:3px&nbsp;3px&nbsp;3px&nbsp;#ccc;-webkit-text-shadow:3px&nbsp;3px&nbsp;3px&nbsp;#ccc;&nbsp;text-align:center;&nbsp;margin-top:30px;"</code><code class="html plain">&gt;FE-演示平台&lt;/</code><code class="html keyword">div</code><code class="html plain">&gt;</code></div><div class="line number3 index2 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">section</code>&nbsp;<code class="html color1">class</code><code class="html plain">=</code><code class="html string">"row"</code><code class="html plain">&gt;</code></div><div class="line number4 index3 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">section</code>&nbsp;<code class="html color1">ng-controller</code><code class="html plain">=</code><code class="html string">"dateDemo"</code>&nbsp;<code class="html color1">class</code><code class="html plain">=</code><code class="html string">"col-md-6"</code>&nbsp;<code class="html color1">style</code><code class="html plain">=</code><code class="html string">"float:none;&nbsp;margin:20px&nbsp;auto;&nbsp;background:#fff;&nbsp;padding:20px;"</code><code class="html plain">&gt;</code></div><div class="line number5 index4 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">pre</code>&nbsp;<code class="html color1">class</code><code class="html plain">=</code><code class="html string">""</code><code class="html plain">&gt;选定的日期是：&lt;</code><code class="html keyword">em</code><code class="html plain">&gt;{{dt&nbsp;|&nbsp;date:'fullDate'}}&lt;/</code><code class="html keyword">em</code><code class="html plain">&gt;&lt;/</code><code class="html keyword">pre</code><code class="html plain">&gt;&nbsp;//{{}}&nbsp;双花括号为angular的取值表达式</code></div><div class="line number6 index5 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">h4</code><code class="html plain">&gt;在线：&lt;/</code><code class="html keyword">h4</code><code class="html plain">&gt;</code></div><div class="line number7 index6 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">section</code>&nbsp;<code class="html color1">style</code><code class="html plain">=</code><code class="html string">"display:inline-block;&nbsp;min-height:240px;"</code><code class="html plain">&gt;</code></div><div class="line number8 index7 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">datepicker</code>&nbsp;<code class="html color1">ng-model</code><code class="html plain">=</code><code class="html string">"dt"</code>&nbsp;<code class="html color1">min-date</code><code class="html plain">=</code><code class="html string">"minDate"</code>&nbsp;<code class="html color1">show-weeks</code><code class="html plain">=</code><code class="html string">"true"</code>&nbsp;<code class="html color1">class</code><code class="html plain">=</code><code class="html string">"wellwell-sm"</code><code class="html plain">&gt;&lt;/</code><code class="html keyword">datepicker</code><code class="html plain">&gt;</code></div><div class="line number9 index8 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;/</code><code class="html keyword">section</code><code class="html plain">&gt;&nbsp;//&nbsp;ng-model&nbsp;绑定dt模块&nbsp;，&nbsp;min-date&nbsp;&nbsp;最少日期&nbsp;&nbsp;show-weeks=&nbsp;ture&nbsp;显示周&nbsp;</code></div><div class="line number10 index9 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">h4</code><code class="html plain">&gt;弹出：&lt;/</code><code class="html keyword">h4</code><code class="html plain">&gt;</code></div><div class="line number11 index10 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">div</code>&nbsp;<code class="html color1">class</code><code class="html plain">=</code><code class="html string">"row"</code><code class="html plain">&gt;</code></div><div class="line number12 index11 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">div</code>&nbsp;<code class="html color1">class</code><code class="html plain">=</code><code class="html string">"col-md-6"</code><code class="html plain">&gt;</code></div><div class="line number13 index12 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">p</code>&nbsp;<code class="html color1">class</code><code class="html plain">=</code><code class="html string">"input-group"</code><code class="html plain">&gt;</code></div><div class="line number14 index13 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">input</code>&nbsp;<code class="html color1">type</code><code class="html plain">=</code><code class="html string">"text"</code>&nbsp;<code class="html color1">class</code><code class="html plain">=</code><code class="html string">"form-control"</code>&nbsp;<code class="html color1">datepicker-popup</code><code class="html plain">=</code><code class="html string">"{{format}}"</code>&nbsp;<code class="html color1">ng-model</code><code class="html plain">=</code><code class="html string">"dt"</code>&nbsp;<code class="html color1">is-open</code><code class="html plain">=</code><code class="html string">"opened"</code>&nbsp;<code class="html color1">min-date</code><code class="html plain">=</code><code class="html string">"minDate"</code>&nbsp;<code class="html color1">max-date</code><code class="html plain">=</code><code class="html string">"'2014-12-30'"</code>&nbsp;<code class="html color1">datepicker-options</code><code class="html plain">=</code><code class="html string">"dateOptions"</code>&nbsp;<code class="html plain">date-disabled&nbsp;=&nbsp;"disabled(date,mode)"&nbsp;</code><code class="html color1">ng-required</code><code class="html plain">=</code><code class="html string">"true"</code>&nbsp;<code class="html color1">close-text</code><code class="html plain">=</code><code class="html string">"Close"</code><code class="html plain">&gt;</code></div><div class="line number15 index14 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">span</code>&nbsp;<code class="html color1">class</code><code class="html plain">=</code><code class="html string">"input-group-btn"</code><code class="html plain">&gt;</code></div><div class="line number16 index15 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">button</code>&nbsp;<code class="html color1">type</code><code class="html plain">=</code><code class="html string">"button"</code>&nbsp;<code class="html color1">class</code><code class="html plain">=</code><code class="html string">"btn&nbsp;btn-default"</code>&nbsp;<code class="html color1">ng-click</code><code class="html plain">=</code><code class="html string">"open($event)"</code><code class="html plain">&gt;</code></div><div class="line number17 index16 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">i</code>&nbsp;<code class="html color1">class</code><code class="html plain">=</code><code class="html string">"glyphicon&nbsp;glyphicon-calendar"</code><code class="html plain">&gt;&lt;/</code><code class="html keyword">i</code><code class="html plain">&gt;</code></div><div class="line number18 index17 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;/</code><code class="html keyword">button</code><code class="html plain">&gt;</code></div><div class="line number19 index18 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;/</code><code class="html keyword">span</code><code class="html plain">&gt;</code></div><div class="line number20 index19 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;/</code><code class="html keyword">p</code><code class="html plain">&gt;</code></div><div class="line number21 index20 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;/</code><code class="html keyword">div</code><code class="html plain">&gt;</code></div><div class="line number22 index21 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;/</code><code class="html keyword">div</code><code class="html plain">&gt;</code></div><div class="line number23 index22 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">div</code>&nbsp;<code class="html color1">class</code><code class="html plain">=</code><code class="html string">"row"</code><code class="html plain">&gt;</code></div><div class="line number24 index23 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">div</code>&nbsp;<code class="html color1">class</code><code class="html plain">=</code><code class="html string">"col-md-6"</code><code class="html plain">&gt;</code></div><div class="line number25 index24 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">label</code>&nbsp;<code class="html color1">for</code><code class="html plain">=</code><code class="html string">""</code><code class="html plain">&gt;格式：&lt;/</code><code class="html keyword">label</code><code class="html plain">&gt;</code></div><div class="line number26 index25 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">select</code>&nbsp;<code class="html color1">name</code><code class="html plain">=</code><code class="html string">""</code>&nbsp;<code class="html color1">id</code><code class="html plain">=</code><code class="html string">""</code>&nbsp;<code class="html color1">class</code><code class="html plain">=</code><code class="html string">"form-control"</code>&nbsp;<code class="html color1">ng-model</code><code class="html plain">=</code><code class="html string">"format"</code>&nbsp;<code class="html color1">ng-options</code><code class="html plain">=</code><code class="html string">"f&nbsp;for&nbsp;f&nbsp;in&nbsp;formats"</code><code class="html plain">&gt;&lt;</code><code class="html keyword">option</code>&nbsp;<code class="html color1">value</code><code class="html plain">=</code><code class="html string">""</code><code class="html plain">&gt;&lt;/</code><code class="html keyword">option</code><code class="html plain">&gt;&lt;/</code><code class="html keyword">select</code><code class="html plain">&gt;&nbsp;&nbsp;//ng-options&nbsp;&nbsp;循环添加option</code></div><div class="line number27 index26 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;/</code><code class="html keyword">div</code><code class="html plain">&gt;</code></div><div class="line number28 index27 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;/</code><code class="html keyword">div</code><code class="html plain">&gt;</code></div><div class="line number29 index28 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">hr</code><code class="html plain">&gt;</code></div><div class="line number30 index29 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">div</code><code class="html plain">&gt;</code></div><div class="line number31 index30 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">button</code>&nbsp;<code class="html color1">type</code><code class="html plain">=</code><code class="html string">"button"</code>&nbsp;<code class="html color1">class</code><code class="html plain">=</code><code class="html string">"btn&nbsp;btn-info&nbsp;btn-sm"</code>&nbsp;<code class="html color1">ng-click</code><code class="html plain">=</code><code class="html string">"today()"</code><code class="html plain">&gt;今天&lt;/</code><code class="html keyword">button</code><code class="html plain">&gt;&nbsp;&nbsp;//一堆点击事件没什么好说的</code></div><div class="line number32 index31 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">button</code>&nbsp;<code class="html color1">type</code><code class="html plain">=</code><code class="html string">"button"</code>&nbsp;<code class="html color1">class</code><code class="html plain">=</code><code class="html string">"btn&nbsp;btn-sm&nbsp;btn-default"</code>&nbsp;<code class="html color1">ng-click</code><code class="html plain">=</code><code class="html string">"dt&nbsp;=&nbsp;'2008-08-08'"</code><code class="html plain">&gt;2008-08-08&lt;/</code><code class="html keyword">button</code><code class="html plain">&gt;</code></div><div class="line number33 index32 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">button</code>&nbsp;<code class="html color1">type</code><code class="html plain">=</code><code class="html string">"button"</code>&nbsp;<code class="html color1">class</code><code class="html plain">=</code><code class="html string">"btn&nbsp;btn-sm&nbsp;btn-danger"</code>&nbsp;<code class="html color1">ng-click</code><code class="html plain">=</code><code class="html string">"clear()"</code>&nbsp;<code class="html plain">&gt;清除&lt;/</code><code class="html keyword">button</code><code class="html plain">&gt;</code></div><div class="line number34 index33 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">button</code>&nbsp;<code class="html color1">type</code><code class="html plain">=</code><code class="html string">"button"</code>&nbsp;<code class="html color1">class</code><code class="html plain">=</code><code class="html string">"btn&nbsp;btn-sm&nbsp;btn-default"</code>&nbsp;<code class="html color1">ng-click</code><code class="html plain">=</code><code class="html string">"toggleMin()"</code>&nbsp;<code class="html color1">tooltip</code><code class="html plain">=</code><code class="html string">"After&nbsp;today"</code><code class="html plain">&gt;闵日期&lt;/</code><code class="html keyword">button</code><code class="html plain">&gt;</code></div><div class="line number35 index34 alt2">&nbsp;</div><div class="line number36 index35 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;/</code><code class="html keyword">div</code><code class="html plain">&gt;</code></div><div class="line number37 index36 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;/</code><code class="html keyword">section</code><code class="html plain">&gt;</code></div><div class="line number38 index37 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;/</code><code class="html keyword">section</code><code class="html plain">&gt;</code></div><div class="line number39 index38 alt2"><code class="html plain">&lt;/</code><code class="html keyword">body</code><code class="html plain">&gt;</code></div></div></td></tr></tbody></table></div></div><p>js代码：</p><div><div id="highlighter_578378" class="syntaxhighlighter  js"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">&lt;script&gt;</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">angular.module(</code><code class="js string">'myApp'</code><code class="js plain">,[</code><code class="js string">'ui.bootstrap'</code><code class="js plain">]).controller(</code><code class="js string">'dateDemo'</code><code class="js plain">,</code><code class="js keyword">function</code><code class="js plain">($scope){</code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">$scope.today&nbsp;=&nbsp;</code><code class="js keyword">function</code><code class="js plain">(){&nbsp;</code><code class="js comments">//&nbsp;创建一个方法，&nbsp;</code></div><div class="line number5 index4 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">$scope.dt&nbsp;=&nbsp;</code><code class="js keyword">new</code>&nbsp;<code class="js plain">Date();&nbsp;</code><code class="js comments">//&nbsp;定义一个属性来接收当天日期</code></div><div class="line number6 index5 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">};</code></div><div class="line number7 index6 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">$scope.today();&nbsp;</code><code class="js comments">//&nbsp;运行today方法</code></div><div class="line number8 index7 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">$scope.clear&nbsp;=&nbsp;</code><code class="js keyword">function</code><code class="js plain">(){&nbsp;&nbsp;</code><code class="js comments">//当运行clear的时候将dt置为空</code></div><div class="line number9 index8 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">$scope.dt&nbsp;=&nbsp;</code><code class="js keyword">null</code><code class="js plain">;</code></div><div class="line number10 index9 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number11 index10 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">$scope.open&nbsp;=&nbsp;</code><code class="js keyword">function</code><code class="js plain">($event){&nbsp;&nbsp;</code><code class="js comments">//&nbsp;创建open方法&nbsp;。&nbsp;下面默认行为并将opened&nbsp;设为true</code></div><div class="line number12 index11 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">$event.preventDefault();</code></div><div class="line number13 index12 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">$event.stopPropagation();</code></div><div class="line number14 index13 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">$scope.opened&nbsp;=&nbsp;</code><code class="js keyword">true</code><code class="js plain">;</code></div><div class="line number15 index14 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number16 index15 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">$scope.disabled&nbsp;=&nbsp;</code><code class="js keyword">function</code><code class="js plain">(date&nbsp;,&nbsp;mode){&nbsp;</code></div><div class="line number17 index16 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">return</code>&nbsp;<code class="js plain">(mode&nbsp;===&nbsp;</code><code class="js string">'day'</code>&nbsp;<code class="js plain">&amp;&amp;&nbsp;(date.getDay()&nbsp;===&nbsp;0&nbsp;||&nbsp;date.getDay()&nbsp;===&nbsp;6))</code></div><div class="line number18 index17 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number19 index18 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">$scope.toggleMin&nbsp;=&nbsp;</code><code class="js keyword">function</code><code class="js plain">(){</code></div><div class="line number20 index19 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">$scope.minDate&nbsp;=&nbsp;$scope.minDate&nbsp;?&nbsp;</code><code class="js keyword">null</code>&nbsp;<code class="js plain">:&nbsp;</code><code class="js keyword">new</code>&nbsp;<code class="js plain">Date();&nbsp;</code><code class="js comments">//3元表达式，没啥好说的</code></div><div class="line number21 index20 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number22 index21 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">$scope.toggleMin();</code></div><div class="line number23 index22 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">$scope.dateOptions&nbsp;=&nbsp;{</code></div><div class="line number24 index23 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">formatYear&nbsp;:&nbsp;</code><code class="js string">'yy'</code><code class="js plain">,</code></div><div class="line number25 index24 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">startingDay&nbsp;:&nbsp;1</code></div><div class="line number26 index25 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number27 index26 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">$scope.formats&nbsp;=&nbsp;[</code><code class="js string">'dd-MMMM-yyyy'</code><code class="js plain">,</code><code class="js string">'yyy/MM/dd'</code><code class="js plain">,</code><code class="js string">'dd.MM.yyyy'</code><code class="js plain">,</code><code class="js string">'shortDate'</code><code class="js plain">];&nbsp;</code><code class="js comments">//日期显示格式&nbsp;</code></div><div class="line number28 index27 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">$scope.format&nbsp;=&nbsp;$scope.formats[0];&nbsp;&nbsp;</code><code class="js comments">//&nbsp;将formats的第0项设为默认显示格式&nbsp;</code></div><div class="line number29 index28 alt2">&nbsp;</div><div class="line number30 index29 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">})</code></div><div class="line number31 index30 alt2"><code class="js plain">&lt;/script&gt;</code></div></div></td></tr></tbody></table></div></div><p><br></p><p>又到了一个实例收尾的时刻了 。&nbsp;</p><p><span style="color: rgb(255, 0, 0); font-size: 18px;">温馨提示， 可以将代码复制到你的本地亲自试试噢 。</span></p><p><span style="color: rgb(255, 0, 0); font-family: 'Microsoft Yahei', 微软雅黑, Tahoma, Arial, Helvetica, STHeiti; font-size: 18px;">如果您对本文有任何疑问，请在下面评论区域进行留言，博主将在第一时间回复您！ 谢谢</span></p>	
+			<textarea name="RunCode" id="code" cols="30" rows="10" style="display:none">
+				&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;FE-演示平台&lt;/title&gt;
+	&lt;link rel="stylesheet" 
+href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css"&gt;
+
+	&lt;script 
+src="http://www.w3cschool.cc/try/angularjs/1.2.5/angular.min.js"&gt;&lt;/script&gt;
+
+	&lt;script 
+src="http://cdn.bootcss.com/angular-ui-bootstrap/0.11.2/ui-bootstrap-tpls.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body
+ ng-app="myApp" style="background:#4A4A4A" class="row"&gt;
+	&lt;div style="color:#fff; font-size:30px; font-weight:bold; 
+text-shadow:3px 3px 3px #ccc;-webkit-text-shadow:3px 3px 3px #ccc; 
+text-align:center; margin-top:30px;"&gt;FE-演示平台&lt;/div&gt;
+	&lt;section class="row"&gt;
+	&lt;section ng-controller="dateDemo" class="col-md-6" 
+style="float:none; margin:20px auto; background:#fff; padding:20px;"&gt;
+		&lt;pre class=""&gt;选定的日期是：&lt;em&gt;{{dt | 
+date:'fullDate'}}&lt;/em&gt;&lt;/pre&gt;
+		&lt;h4&gt;在线：&lt;/h4&gt;
+		&lt;section style="display:inline-block; min-height:240px;"&gt;
+			&lt;datepicker ng-model="dt" min-date="minDate" show-weeks="true" 
+class="wellwell-sm"&gt;&lt;/datepicker&gt;
+		&lt;/section&gt;
+		&lt;h4&gt;弹出：&lt;/h4&gt;
+		&lt;div class="row"&gt;
+			&lt;div class="col-md-6"&gt;
+				&lt;p class="input-group"&gt;
+					&lt;input type="text" class="form-control" 
+datepicker-popup="{{format}}" ng-model="dt" is-open="opened" 
+min-date="minDate" max-date="'2014-12-30'" 
+datepicker-options="dateOptions" date-disabled = "disabled(date,mode)" 
+ng-required="true" close-text="Close"&gt;
+					&lt;span class="input-group-btn"&gt;
+						&lt;button type="button" class="btn btn-default" 
+ng-click="open($event)"&gt;
+							&lt;i class="glyphicon glyphicon-calendar"&gt;&lt;/i&gt;
+						&lt;/button&gt;
+					&lt;/span&gt;
+				&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="row"&gt;
+			&lt;div class="col-md-6"&gt;
+				&lt;label for=""&gt;格式：&lt;/label&gt;
+				&lt;select name="" id="" class="form-control" ng-model="format" 
+ng-options="f for f in formats"&gt;&lt;option 
+value=""&gt;&lt;/option&gt;&lt;/select&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;hr&gt;
+		&lt;div&gt;
+			&lt;button type="button" class="btn btn-info btn-sm" 
+ng-click="today()"&gt;今天&lt;/button&gt;
+			&lt;button type="button" class="btn btn-sm btn-default" ng-click="dt =
+ '2008-08-08'"&gt;2008-08-08&lt;/button&gt;
+			&lt;button type="button" class="btn btn-sm btn-danger" 
+ng-click="clear()" &gt;清除&lt;/button&gt;
+			&lt;button type="button" class="btn btn-sm btn-default" 
+ng-click="toggleMin()" tooltip="After today"&gt;闵日期&lt;/button&gt;
+
+		&lt;/div&gt;
+	&lt;/section&gt;
+	&lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;script&gt;
+
+	
+angular.module('myApp',['ui.bootstrap']).controller('dateDemo',function($scope){
+
+		$scope.today = function(){
+			$scope.dt = new Date();
+		};
+		$scope.today();
+		$scope.clear = function(){
+			$scope.dt = null;
+		}
+		$scope.open = function($event){
+			$event.preventDefault();
+			$event.stopPropagation();
+			$scope.opened = true;
+		}
+		$scope.disabled = function(date , mode){
+			return (mode === 'day' &amp;&amp; (date.getDay() === 0 || 
+date.getDay() === 6))
+		}
+		$scope.toggleMin = function(){
+			$scope.minDate = $scope.minDate ? null : new Date();
+		}
+		$scope.toggleMin();
+		$scope.dateOptions = {
+			formatYear : 'yy',
+			startingDay : 1
+		}
+		$scope.formats = 
+['dd-MMMM-yyyy','yyy/MM/dd','dd.MM.yyyy','shortDate'];
+		$scope.format = $scope.formats[0];
+
+	})
+&lt;/script&gt;
+			</textarea>
+
+		
+  
+	  <section class="bd-share" style="margin: 5px auto;">
+		<section data-bd-bind="1461129917020" class="bdsharebuttonbox bdshare-button-style0-24"><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a><a title="分享到百度贴吧" href="#" class="bds_tieba" data-cmd="tieba"></a><a title="分享到QQ好友" href="#" class="bds_sqq" data-cmd="sqq"></a><a title="分享到百度空间" href="#" class="bds_hi" data-cmd="hi"></a><a title="分享到网易微博" href="#" class="bds_t163" data-cmd="t163"></a><a title="分享到有道云笔记" href="#" class="bds_youdao" data-cmd="youdao"></a></section>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin","tieba","sqq","hi","t163","youdao"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin","tieba","sqq","hi","t163","youdao"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+		</section>
+			<section>
+
+	<script type="text/javascript">
+	    /*728*90 创建于 2015-02-12*/
+	    var cpro_id = "u1951131";
+	</script>
+	<script src="angular%E5%AE%9E%E4%BE%8B%E6%97%A5%E6%9C%9F%E6%8E%A7%E4%BB%B6_files/c.js" type="text/javascript"></script><div id="BAIDU_SSP__wrapper_u1951131_0"></div>
+
+
+	</section>
+		<section class="newsRecommend">
+			<h2 class="menuBar">精彩推荐</h2>
+			<ul>
+				<li>
+					<a href="http://www.html5jq.com/fe/angular_node/20150725/154.html">Bower —— 管理你的客户端依赖关系</a>
+					<span>2015-07-25</span>
+				</li>
+<li>
+					<a href="http://www.html5jq.com/fe/angular_node/20150327/111.html">说说Angular中的$timeOut定时器</a>
+					<span>2015-03-27</span>
+				</li>
+<li>
+					<a href="http://www.html5jq.com/fe/angular_node/20141127/13.html">angular实例模态【modal】</a>
+					<span>2014-11-27</span>
+				</li>
+<li>
+					<a href="http://www.html5jq.com/fe/angular_node/20150402/122.html">Vim命令大全</a>
+					<span>2015-04-02</span>
+				</li>
+<li>
+					<a href="http://www.html5jq.com/fe/angular_node/20141202/20.html">angular实例基本表格【grid】</a>
+					<span>2014-12-02</span>
+				</li>
+<li>
+					<a href="http://www.html5jq.com/fe/angular_node/20150417/132.html">美加州罪犯学习编程 出狱后真的变身为程序员</a>
+					<span>2015-04-17</span>
+				</li>
+<li>
+					<a href="http://www.html5jq.com/fe/angular_node/20141206/21.html">MongoDB介绍及下载与安装</a>
+					<span>2014-12-06</span>
+				</li>
+<li>
+					<a href="http://www.html5jq.com/fe/angular_node/20160103/166.html">linux下使用yum安装mysql</a>
+					<span>2016-01-03</span>
+				</li>
+
+			</ul>
+		
+		</section>
+		<section>
+			尚未注册畅言帐号，请到后台注册
+		</section> 
+	</aside>
+	<aside class="asideList">
+			<section>
+				<div id="search">
+					<h2>搜索文章</h2>
+					<form class="searchbox" method="get" action="/plus/search.php" onsubmit="return chk();">
+						<input name="kwtype" value="0" type="hidden">
+						<input name="searchtype" value="titlekeyword" type="hidden">
+						<input id="q" name="q" placeholder="请输入关键词查找" type="text"><input value="搜 索" class="searchBtn" type="submit">
+					</form>
+				</div>
+			</section>
+			<section class="interactive">
+				千人QQ群：341151429<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=910f4d851357b04cccefc370043adf2198680fea8b3e7fa5cff35787e692c3b9"><img data-bd-imgshare-binded="1" src="angular%E5%AE%9E%E4%BE%8B%E6%97%A5%E6%9C%9F%E6%8E%A7%E4%BB%B6_files/group.png" alt="web前端开发-大神入驻" title="web前端开发-大神入驻" border="0"></a>
+			</section>
+			<section class="linkShow">
+				<a href="http://www.zhufengpeixun.cn/" target="blank"><img data-bd-imgshare-binded="1" src="angular%E5%AE%9E%E4%BE%8B%E6%97%A5%E6%9C%9F%E6%8E%A7%E4%BB%B6_files/jsPX.jpg" alt="http://www.zhufengpeixun.cn/"></a>
+			</section>
+		<section>
+			<script type="text/javascript">
+			    /*300*250 创建于 2015-02-12*/
+			    var cpro_id = "u1951099";
+			</script>
+			<script src="angular%E5%AE%9E%E4%BE%8B%E6%97%A5%E6%9C%9F%E6%8E%A7%E4%BB%B6_files/c.js" type="text/javascript"></script><div id="BAIDU_SSP__wrapper_u1951099_0"></div>
+
+		</section>	
+		<section>
+			<div class="articleShow">
+				<h2>热门标签</h2>
+				<div id="wrap"> 
+				    
+		            <a class="color1" style="left: 536px; top: 126px; z-index: 2; font-size: 18px; color: rgb(212, 23, 74);" href="http://www.html5jq.com/tags.php?/Web%E7%BC%93%E5%AD%98/">Web缓存</a>
+					
+		            <a class="color2" style="left: 221px; top: 260px; z-index: 5; font-size: 19px; color: rgb(126, 141, 87);" href="http://www.html5jq.com/tags.php?/%E5%8D%81%E5%A4%A7%E7%89%B9%E6%80%A7/">十大特性</a>
+					
+		            <a class="color4" style="left: 482px; top: 71px; z-index: 5; font-size: 16px; color: rgb(7, 251, 234);" href="http://www.html5jq.com/tags.php?/ES6/">ES6</a>
+					
+		            <a class="color4" style="left: 229px; top: 67px; z-index: 2; font-size: 17px; color: rgb(46, 223, 255);" href="http://www.html5jq.com/tags.php?/yum%E5%AE%89%E8%A3%85mysql/">yum安装mysql</a>
+					
+		            <a class="color5" style="left: 133px; top: 302px; z-index: 3; font-size: 24px; color: rgb(132, 0, 86);" href="http://www.html5jq.com/tags.php?/%E5%AE%89%E8%A3%85node%2F/">安装node/</a>
+					
+		            <a class="color3" style="left: 331px; top: 37px; z-index: 2; font-size: 14px; color: rgb(234, 248, 140);" href="http://www.html5jq.com/tags.php?/performance/">performance</a>
+					
+		            <a class="color3" style="left: 422px; top: 191px; z-index: 4; font-size: 15px; color: rgb(43, 220, 67);" href="http://www.html5jq.com/tags.php?/Webpack/">Webpack</a>
+					
+		            <a class="color5" style="left: 330px; top: 276px; z-index: 5; font-size: 17px; color: rgb(65, 130, 197);" href="http://www.html5jq.com/tags.php?/Git+bash/">Git bash</a>
+					
+		            <a class="color1" style="left: 138px; top: 383px; z-index: 5; font-size: 19px; color: rgb(148, 36, 43);" href="http://www.html5jq.com/tags.php?/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a>
+					
+		            <a class="color1" style="left: 528px; top: 226px; z-index: 1; font-size: 19px; color: rgb(9, 188, 230);" href="http://www.html5jq.com/tags.php?/%E7%BB%A7%E6%89%BF/">继承</a>
+					
+		            <a class="color5" style="left: 251px; top: 207px; z-index: 1; font-size: 23px; color: rgb(7, 109, 28);" href="http://www.html5jq.com/tags.php?/js%E8%B7%A8%E5%9F%9F/">js跨域</a>
+					
+		            <a class="color1" style="left: 494px; top: 152px; z-index: 1; font-size: 21px; color: rgb(62, 253, 115);" href="http://www.html5jq.com/tags.php?/%E5%AD%A6%E4%B9%A0%E6%80%9D%E7%BB%B4%E5%9B%BE/">学习思维图</a>
+					
+		            <a class="color3" style="left: 194px; top: 203px; z-index: 5; font-size: 18px; color: rgb(156, 27, 1);" href="http://www.html5jq.com/tags.php?/Gulp/">Gulp</a>
+					
+		            <a class="color4" style="left: 171px; top: 148px; z-index: 3; font-size: 14px; color: rgb(83, 248, 147);" href="http://www.html5jq.com/tags.php?/Yeoman%EF%BC%9AWeb/">Yeoman：Web</a>
+					
+		            <a class="color5" style="left: 193px; top: 251px; z-index: 4; font-size: 24px; color: rgb(18, 19, 138);" href="http://www.html5jq.com/tags.php?/AngularJS/">AngularJS</a>
+					
+		            <a class="color4" style="left: 303px; top: 141px; z-index: 5; font-size: 19px; color: rgb(100, 30, 242);" href="http://www.html5jq.com/tags.php?/Bower/">Bower</a>
+					
+		            <a class="color1" style="left: 569px; top: 106px; z-index: 1; font-size: 16px; color: rgb(215, 207, 155);" href="http://www.html5jq.com/tags.php?/Chrome%E5%BC%80%E5%8F%91%E8%80%85/">Chrome开发者</a>
+					
+		            <a class="color2" style="left: 556px; top: 337px; z-index: 1; font-size: 18px; color: rgb(5, 176, 71);" href="http://www.html5jq.com/tags.php?/Iterm2/">Iterm2</a>
+					
+		            <a class="color1" style="left: 124px; top: 215px; z-index: 5; font-size: 17px; color: rgb(230, 133, 82);" href="http://www.html5jq.com/tags.php?/%E4%BB%A3%E7%A0%81%E5%88%86%E4%BA%AB/">代码分享</a>
+					
+		            <a class="color5" style="left: 558px; top: 118px; z-index: 1; font-size: 19px; color: rgb(3, 91, 84);" href="http://www.html5jq.com/tags.php?/ng%E4%B8%AD%E6%8E%A7%E5%88%B6%E5%99%A8/">ng中控制器</a>
+					
+		            <a class="color1" style="left: 79px; top: 302px; z-index: 1; font-size: 20px; color: rgb(29, 100, 152);" href="http://www.html5jq.com/tags.php?/Charles/">Charles</a>
+					
+		            <a class="color2" style="left: 170px; top: 279px; z-index: 5; font-size: 20px; color: rgb(240, 133, 133);" href="http://www.html5jq.com/tags.php?/Git/">Git</a>
+					
+		            <a class="color3" style="left: 508px; top: 392px; z-index: 3; font-size: 24px; color: rgb(100, 32, 66);" href="http://www.html5jq.com/tags.php?/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%80%A7%E8%83%BD/">移动端性能</a>
+					
+		            <a class="color1" style="left: 221px; top: 185px; z-index: 3; font-size: 15px; color: rgb(95, 148, 32);" href="http://www.html5jq.com/tags.php?/lozyload/">lozyload</a>
+					
+		            <a class="color1" style="left: 226px; top: 331px; z-index: 1; font-size: 15px; color: rgb(37, 61, 196);" href="http://www.html5jq.com/tags.php?/Protractor/">Protractor</a>
+					
+		            <a class="color2" style="left: 129px; top: 51px; z-index: 2; font-size: 13px; color: rgb(125, 208, 243);" href="http://www.html5jq.com/tags.php?/JavaScript/">JavaScript</a>
+					
+		            <a class="color3" style="left: 493px; top: 301px; z-index: 5; font-size: 13px; color: rgb(160, 229, 119);" href="http://www.html5jq.com/tags.php?/%E7%BC%96%E7%A8%8B%E7%A6%81%E5%BF%8C/">编程禁忌</a>
+					
+		            <a class="color1" style="left: 223px; top: 137px; z-index: 5; font-size: 24px; color: rgb(252, 196, 168);" href="http://www.html5jq.com/tags.php?/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/">移动开发</a>
+					
+		            <a class="color4" style="left: 172px; top: 400px; z-index: 4; font-size: 23px; color: rgb(49, 45, 103);" href="http://www.html5jq.com/tags.php?/Win10/">Win10</a>
+					
+		            <a class="color4" style="left: 285px; top: 227px; z-index: 4; font-size: 18px; color: rgb(125, 32, 160);" href="http://www.html5jq.com/tags.php?/Mac/">Mac</a>
+						
+				</div>
+			</div>
+		</section>
+		<section>
+				<div class="articleShow">
+					<h2>推荐文章</h2>
+					<ul>
+						<li><a href="http://www.html5jq.com/fe/angular_node/20141127/12.html">angular实例日期控件【datepicker】</a></li>
+<li><a href="http://www.html5jq.com/fe/angular_node/20150417/133.html">深入理解ANGULARUI路由_UI-ROUTER</a></li>
+<li><a href="http://www.html5jq.com/fe/angular_node/20141127/13.html">angular实例模态【modal】</a></li>
+<li><a href="http://www.html5jq.com/fe/angular_node/20141206/22.html">Mongo运行错误：Failed to connect 127.0.0.1:27017,reason:</a></li>
+<li><a href="http://www.html5jq.com/fe/angular_node/20141128/16.html">angular实例tab切换【tabs】</a></li>
+<li><a href="http://www.html5jq.com/fe/angular_node/20141127/10.html">angular实例提示框【alert】</a></li>
+<li><a href="http://www.html5jq.com/fe/angular_node/20141128/14.html">angular实例分页【pagination】</a></li>
+<li><a href="http://www.html5jq.com/fe/angular_node/20141113/1.html">AngularJS双向数据绑定揭秘</a></li>
+
+					</ul>
+				</div>
+		</section>
+		<section>
+				<div class="articleShow">
+					<h2>友情链接</h2>
+						<ul>					
+							<li><a href="http://www.rainweb.cn/" target="_blank">rainweb前端开发</a> </li><li><a href="http://www.html5jq.com/" target="_blank">前端开发-收集最前沿</a> </li><li><a href="http://www.fzb.me/about/" target="_blank">宗宝vs褡裢坡.av</a> </li><li><a href="http://www.liguangliang.com.cn/" target="_blank">青春华航</a> </li><li><a href="http://www.dach328.com/" target="_blank">橙子前端技术分享</a> </li><li><a href="http://www.webcloud-info.com/" target="_blank">web云信息</a> </li><li><a href="http://blog.fengxiaotx.com/" target="_blank">开发者成长之路</a> </li><li><a href="http://www.6789.cn/tag/shuangren/" target="_blank">双人小游戏大全</a> </li><li><a href="http://www.6789.cn/pkgame/" target="_blank">积分小游戏</a> </li><li><a href="http://www.6789.cn/tag/pailei/" target="_blank">牌类游戏</a> </li><li><a href="http://www.6789.cn/tag/pintu/" target="_blank">拼图游戏大全</a> </li><li><a href="http://www.6789.cn/tag/duiduipeng/" target="_blank">对对碰游戏</a> </li><li><a href="http://www.6789.cn/tag/fanpai/" target="_blank">翻牌游戏</a> </li><li><a href="http://www.6789.cn/tag/ceshi/" target="_blank">智力游戏</a> </li>
+						</ul>
+				</div>
+		</section>
+
+<!-- 		<section id = "ad2">
+			<h2>黄金广告</h2>
+<script type="text/javascript">
+     document.write('<a style="display:none!important" id="tanx-a-mm_107986936_8700784_29306285"></a>');
+     tanx_s = document.createElement("script");
+     tanx_s.type = "text/javascript";
+     tanx_s.charset = "gbk";
+     tanx_s.id = "tanx-s-mm_107986936_8700784_29306285";
+     tanx_s.async = true;
+     tanx_s.src = "http://p.tanx.com/ex?i=mm_107986936_8700784_29306285";
+     tanx_h = document.getElementsByTagName("head")[0];
+     if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
+</script>
+		</section> -->
+	</aside>
+	<script type="text/javascript">
+    /*120*300 创建于 2015-02-12*/
+var cpro_id = "u1951271";
+</script>
+<script src="angular%E5%AE%9E%E4%BE%8B%E6%97%A5%E6%9C%9F%E6%8E%A7%E4%BB%B6_files/f.js" type="text/javascript"></script><div id="BAIDU_SSP__wrapper_u1951271_0"></div>
+
+</section>
+<script type="text/javascript">
+	function rand(num){ 
+	return parseInt(Math.random()*num+1); 
+	}
+	function randomcolor(){ 
+		var str=Math.ceil(Math.random()*16777215).toString(16); 
+		if(str.length<6){ 
+		str="0"+str; 
+		} 
+		return str; 
+		}
+		var obj = wrap.getElementsByTagName('a');
+		for( len=obj.length,i=len;i--;){ 
+		obj[i].style.left=rand(600)+"px"; 
+		obj[i].style.top=rand(400)+"px"; 
+		obj[i].className="color"+rand(5); 
+		obj[i].style.zIndex=rand(5); 
+		obj[i].style.fontSize=rand(12)+12+"px"; 
+		obj[i].style.color="#"+randomcolor(); 
+		obj[i].onmouseover=function(){ 
+		this.style.background="#"+randomcolor(); 
+		} 
+		obj[i].onmouseout=function(){ 
+		this.style.background="none"; 
+	} 
+	}  
+	$(function() {
+		$(".list-news-item").hover(function() {
+			$(this).css("backgroundColor", "#F8F8F8");
+		}, function() {
+			$(this).css("backgroundColor", "#FFFFFF")
+		});
+	});
+	// $('.downBtnBox a').bind('click',function(){
+	// 	$.FloatingHint({id:"FloatHint",holdTime: 1000,text:"亲，此功能正在建设中..."});
+	// 	return;
+	// 	openview()
+	// })
+	function getByid(id) {
+	    if (document.getElementById) {
+	        return document.getElementById(id);
+	    } else if (document.all) {
+	        return document.all[id];
+	    } else if (document.layers) {
+	        return document.layers[id];
+	    } else {
+	        return null;
+	    }
+	}
+	function runCode(id){  //定义一个运行代码的函数，
+	      var code=getByid(id).value;//即要运行的代码。
+	      var newwin=window.open('','','');  //打开一个窗口并赋给变量newwin。
+	      newwin.opener = null // 防止代码对论谈页面修改
+	      newwin.document.write(code);  //向这个打开的窗口中写入代码code，这样就实现了运行代码功能。
+	      newwin.document.close();
+	}
+	SyntaxHighlighter.highlight();
+
+</script>
+<footer class="footer">
+<div class="footer_con">
+<nav class="footer_con_nav">
+	<strong>友情链接</strong>
+	<ul>					
+		<li><a href="http://www.rainweb.cn/" target="_blank">rainweb前端开发</a> </li><li><a href="http://www.html5jq.com/" target="_blank">前端开发-收集最前沿</a> </li><li><a href="http://www.fzb.me/about/" target="_blank">宗宝vs褡裢坡.av</a> </li><li><a href="http://www.liguangliang.com.cn/" target="_blank">青春华航</a> </li><li><a href="http://www.dach328.com/" target="_blank">橙子前端技术分享</a> </li><li><a href="http://www.webcloud-info.com/" target="_blank">web云信息</a> </li><li><a href="http://blog.fengxiaotx.com/" target="_blank">开发者成长之路</a> </li><li><a href="http://www.6789.cn/tag/shuangren/" target="_blank">双人小游戏大全</a> </li><li><a href="http://www.6789.cn/pkgame/" target="_blank">积分小游戏</a> </li><li><a href="http://www.6789.cn/tag/pailei/" target="_blank">牌类游戏</a> </li><li><a href="http://www.6789.cn/tag/pintu/" target="_blank">拼图游戏大全</a> </li><li><a href="http://www.6789.cn/tag/duiduipeng/" target="_blank">对对碰游戏</a> </li><li><a href="http://www.6789.cn/tag/fanpai/" target="_blank">翻牌游戏</a> </li><li><a href="http://www.6789.cn/tag/ceshi/" target="_blank">智力游戏</a> </li>
+	</ul>
+</nav>
+<div class="footer_con_bottom">
+	<span class="
+	">Copyright©2010-2014 All <a href="http://www.html5jq.com/" class="link" style="color:blue">html5jq.com</a></span>
+	 | 京ICP备15001338号 
+<!--百度统计-->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2c15c12f25383c826dc058a2f0f3536c' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="angular%E5%AE%9E%E4%BE%8B%E6%97%A5%E6%9C%9F%E6%8E%A7%E4%BB%B6_files/h.txt" type="text/javascript"></script>
+</div>
+</div>
+</footer>
+<span style="display: inline;" id="arrow"></span>
+
+<script>
+	//判断是否为空
+	function chk() {
+		var sv = $("#q").val();
+		if(sv.length < 2) {
+			$.FloatingHint({id:"FloatHint",holdTime: 1000,text:"亲，请至少输入两个字符..."});
+			return false;
+		}else{
+			$('form').submit();
+		}
+	}
+ 	var lastPic = $('#bannerBox section:first').clone(true);
+ 	$('#bannerBox').append(lastPic)
+  	$('#bannerBox section').width($('#banner').width());
+  	var picW = $('#bannerBox section').eq(0).width();
+  	var len = $('#bannerBox section').length;
+  	$('#bannerBox').css({
+  		'width' : picW * len,
+  		// 'height' : 100%
+  	});
+  	
+  	move = function(ele,eleChilren,link,isAuto){
+		var i = 0;
+		if(isAuto){
+  			setInterval(_move,5000);
+  		}else{
+  			_move();
+  		};
+  		function _move(){
+  			i++;
+	  		if( i == len){
+	  			link.eq(1).addClass('current').siblings().removeClass('current');
+	  			i = 1;
+	  			ele.css('left',0);
+	  		}else if(i == len-1){
+	  			link.eq(0).addClass('current').siblings().removeClass('current');
+	  		}else{
+	  			link.eq(i).addClass('current').siblings().removeClass('current');
+	  		}
+			ele.animate({'left':-picW*i},2000)
+  		} 		
+  	};
+  	move($('#bannerBox'),$('#bannerBox section'),$('.currentLink a'),true);
+  	goTo = function(target){
+                var scrollT = document.body.scrollTop|| document.documentElement.scrollTop
+                if (scrollT >target) {
+                    var timer = setInterval(function(){
+                        var scrollT = document.body.scrollTop|| document.documentElement.scrollTop
+                        var step = Math.floor(-scrollT/6);
+                        document.documentElement.scrollTop = document.body.scrollTop = step + scrollT;
+                        if(scrollT <= target){
+                            document.body.scrollTop = document.documentElement.scrollTop = target;
+                            clearTimeout(timer);
+                        }
+                    },20)
+                }else if(scrollT == 0){
+                    var timer = setInterval(function(){
+                        var scrollT = document.body.scrollTop|| document.documentElement.scrollTop
+                        var step = Math.floor(300/3*0.7);
+                        document.documentElement.scrollTop = document.body.scrollTop = step + scrollT;
+                        console.log(scrollT)
+                        if(scrollT >= target){
+                            document.body.scrollTop = document.documentElement.scrollTop = target;
+                            clearTimeout(timer);
+                        }
+                    },20)
+                }else if(scrollT < target){
+                    var timer = setInterval(function(){
+                        var scrollT = document.body.scrollTop|| document.documentElement.scrollTop
+                        var step = Math.floor(scrollT/6);
+                        document.documentElement.scrollTop = document.body.scrollTop = step + scrollT;
+                        if(scrollT >= target){
+                            document.body.scrollTop = document.documentElement.scrollTop = target;
+                            clearTimeout(timer);
+                        }
+                    },20)
+                }else if(target == scrollT){
+                    return false;
+                }
+           };
+        $(window).scroll(function(){
+            var t = document.body.scrollTop || document.documentElement.scrollTop;
+            if(t >= 100 ){
+              $('#arrow').show();
+            }else{
+              $('#arrow').hide();
+            }
+        })
+        $('#arrow').click(function(){
+           goTo(0);
+        })
+       $("a").click(function() {
+         $("#loading").animate({"width": "100%"}, 100);
+       });
+         if(4 == 4){
+          $('.navRight ul li').eq(1).addClass('currentPage');
+        }else if(4 == 5){
+          $('.navRight ul li').eq(5).addClass('currentPage');
+        }else if(4 == 6){
+          $('.navRight ul li').eq(4).addClass('currentPage');
+        }
+        else{
+           $('.navRight ul li').eq(4).addClass('currentPage');
+        }
+</script>
+
+<iframe id="bdSharePopup_selectshare1461129917024bg" class="bdselect_share_bg" style="top: 740px; left: 426px; display: inline; width: 300px; height: 120px;" frameborder="0"></iframe><div data-bd-bind="1461129917024" id="bdSharePopup_selectshare1461129917024box" style="top: 740px; left: 426px; display: block; width: 300px;" share-type="selectshare" class="bdselect_share_box"><div class="selectshare-mod-triangle"><div class="triangle-border"></div><div class="triangle-inset"></div></div><div style="width: 300px;" class="bdselect_share_head"><span>分享到</span><a href="http://www.baidu.com/s?wd=%3Cp%20class=%22input-group%22%3E&amp;tn=SE_hldp08010_vurs2xrp" class="bdselect_share_dialog_search" target="_blank"><i class="bdselect_share_dialog_search_i"></i><span class="bdselect_share_dialog_search_span">百度一下</span></a><a class="bdselect_share_dialog_close"></a></div><div class="bdselect_share_content"><ul class="bdselect_share_list bdshare-button-style0-24"><div class="bdselect_share_partners"><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a><a href="#" class="bds_tieba" data-cmd="tieba"></a><a href="#" class="bds_sqq" data-cmd="sqq"></a><a href="#" class="bds_hi" data-cmd="hi"></a><a href="#" class="bds_t163" data-cmd="t163"></a><a href="#" class="bds_youdao" data-cmd="youdao"></a></div><a href="#" class="bds_more" data-cmd="more"></a></ul></div></div><div data-bd-bind="1461129917027" id="bdimgshare_1461129917027" class="sr-bdimgshare sr-bdimgshare-list sr-bdimgshare-16 sr-bdimgshare-black" style="height:36px;line-height:26px;font-size:12px;width:autopx;display:none;"><div class="bdimgshare-bg"></div><div class="bdimgshare-content bdsharebuttonbox bdshare-button-style0-16"><label class="bdimgshare-lbl">分享到：</label><a href="#" onclick="return false;" class="bds_qzone" data-cmd="qzone" hidefocus=""></a><a href="#" onclick="return false;" class="bds_tsina" data-cmd="tsina" hidefocus=""></a><a href="#" onclick="return false;" class="bds_tqq" data-cmd="tqq" hidefocus=""></a><a href="#" onclick="return false;" class="bds_renren" data-cmd="renren" hidefocus=""></a><a href="#" onclick="return false;" class="bds_weixin" data-cmd="weixin" hidefocus=""></a><a href="#" onclick="return false;" class="bds_tieba" data-cmd="tieba" hidefocus=""></a><a href="#" onclick="return false;" class="bds_sqq" data-cmd="sqq" hidefocus=""></a><a href="#" onclick="return false;" class="bds_hi" data-cmd="hi" hidefocus=""></a><a href="#" onclick="return false;" class="bds_t163" data-cmd="t163" hidefocus=""></a><a href="#" onclick="return false;" class="bds_youdao" data-cmd="youdao" hidefocus=""></a><a href="#" onclick="return false;" class="bds_more" data-cmd="more" hidefocus=""></a></div></div></body></html>

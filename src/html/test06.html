@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src='../js/angular.min.js'></script>
+<script type="text/javascript" src='../js/test06.js'></script>
+<style>
+table, th, td {
+	border: 1px solid grey;
+	border-collapse: collapse;
+	padding: 5px;
+}
+
+table tr:nth-child(odd) {
+	background-color: #f1f1f1;
+}
+
+table tr:nth-child(even) {
+	background-color: #ffffff;
+}
+</style>
+</head>
+<body ng-app='app' ng-controller='ctrl'>
+	<select ng-model='duty' ng-options='d.text for d in dutySelect'></select>
+	<p>职位：{{duty.text}}----{{duty.value}}</p>
+
+	<table>
+		<tr ng-repeat='d in dutySelect'>
+			<td>{{$index + 1}}</td>
+			<td>{{d.text}}</td>
+			<td>{{d.text}}</td>
+			<td>{{d.text}}</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<br>
+	
+	<input ng-model='user.firstname'>
+	<input ng-model='user.lastname'>
+	<br>
+	<p>user={{user}}</p>
+	<p>master={{master}}</p>
+	<input type="button" ng-click='reset()' value="重置">
+	<br>
+	<br>
+	<br>
+	 <form action="" name="myForm">
+	 	<p>
+	 	<input type="text" name="username" ng-model='username' required="required">
+	 	<span ng-show='myForm.username.$dirty && myForm.username.$invalid'>
+	 		<span ng-show='myForm.username.$error.required'>用户名必输项</span>
+	 	</span>
+	 	</p>
+	 	
+	 	<p>
+	 	<input type="email" name="email" ng-model='email' required="required">
+	 	<span ng-show='myForm.email.$dirty && myForm.email.$invalid'>
+	 		<span ng-show='myForm.email.$error.required'>邮件必输项</span>
+	 		<span ng-show='myForm.email.$error.email'>邮件格式错误</span>
+	 	</span>
+	 	</p>
+	 	<input type="button" value="提交" ng-disabled='myForm.username.$dirty && myForm.username.$invalid || myForm.email.$dirty && myForm.email.$invalid'>
+	 </form>
+</body>
+</html>

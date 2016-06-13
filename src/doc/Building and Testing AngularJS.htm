@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html class="ng-scope" ng-app="docsApp" ng-strict-di="" ng-controller="DocsController" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="Description" content="AngularJS is what HTML would have been, had it been designed for building web-apps.
+                 Declarative templates with data-binding, MVC, dependency injection and great
+                 testability story all implemented with pure client-side JavaScript!">
+  <meta name="fragment" content="!">
+  <title class="ng-binding" ng-bind-template="AngularJS: Miscellaneous: Develop">AngularJS: Miscellaneous: Develop</title>
+
+  <script src="Building%20and%20Testing%20AngularJS_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript">
+    // dynamically add base tag as well as css and javascript files.
+    // we can't add css/js the usual way, because some browsers (FF) eagerly prefetch resources
+    // before the base attribute is added, causing 404 and terribly slow loading of the docs app.
+    (function() {
+      var indexFile = (location.pathname.match(/\/(index[^\.]*\.html)/) || ['', ''])[1],
+          rUrl = /(#!\/|api|guide|misc|tutorial|error|index[^\.]*\.html).*$/,
+          baseUrl = location.href.replace(rUrl, indexFile),
+          production = location.hostname === 'docs.angularjs.org',
+          headEl = document.getElementsByTagName('head')[0],
+          sync = true;
+
+      addTag('base', {href: baseUrl});
+
+
+      addTag('link', {rel: 'stylesheet', href: 'components/bootstrap-3.1.1/css/bootstrap.min.css', type: 'text/css'});
+      addTag('link', {rel: 'stylesheet', href: 'components/open-sans-fontface-1.0.4/open-sans.css', type: 'text/css'});
+      addTag('link', {rel: 'stylesheet', href: 'css/prettify-theme.css', type: 'text/css'});
+      addTag('link', {rel: 'stylesheet', href: 'css/docs.css', type: 'text/css'});
+      addTag('link', {rel: 'stylesheet', href: 'css/animations.css', type: 'text/css'});
+      
+
+      addTag('script', {src: '//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js' }, sync);
+      addTag('script', {src: '//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-resource.min.js' }, sync);
+      addTag('script', {src: '//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js' }, sync);
+      addTag('script', {src: '//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-cookies.min.js' }, sync);
+      addTag('script', {src: '//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-sanitize.min.js' }, sync);
+      addTag('script', {src: '//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-touch.min.js' }, sync);
+      addTag('script', {src: '//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js' }, sync);
+      addTag('script', {src: 'components/marked-0.3.5/lib/marked.js' }, sync);
+      addTag('script', {src: 'js/angular-bootstrap/dropdown-toggle.min.js' }, sync);
+      addTag('script', {src: 'components/lunr.js-0.5.12/lunr.min.js' }, sync);
+      addTag('script', {src: 'components/google-code-prettify-1.0.1/src/prettify.js' }, sync);
+      addTag('script', {src: 'components/google-code-prettify-1.0.1/src/lang-css.js' }, sync);
+      addTag('script', {src: 'js/versions-data.js' }, sync);
+      addTag('script', {src: 'js/pages-data.js' }, sync);
+      addTag('script', {src: 'js/nav-data.js' }, sync);
+      addTag('script', {src: 'js/docs.min.js' }, sync);
+      
+
+      function addTag(name, attributes, sync) {
+        var el = document.createElement(name),
+            attrName;
+
+        for (attrName in attributes) {
+          el.setAttribute(attrName, attributes[attrName]);
+        }
+
+        sync ? document.write(outerHTML(el)) : headEl.appendChild(el);
+      }
+
+      function outerHTML(node){
+        // if IE, Chrome take the internal method otherwise build one
+        return node.outerHTML || (
+            function(n){
+                var div = document.createElement('div'), h;
+                div.appendChild(n);
+                h = div.innerHTML;
+                div = null;
+                return h;
+            })(node);
+      }
+    })();
+
+    // GA asynchronous tracker
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-8594346-3']);
+    _gaq.push(['_setDomainName', '.angularjs.org']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script><!-- base href="https://docs.angularjs.org/" --><link type="text/css" href="Building%20and%20Testing%20AngularJS_files/bootstrap.css" rel="stylesheet"><link type="text/css" href="Building%20and%20Testing%20AngularJS_files/open-sans.css" rel="stylesheet"><link type="text/css" href="Building%20and%20Testing%20AngularJS_files/prettify-theme.css" rel="stylesheet"><link type="text/css" href="Building%20and%20Testing%20AngularJS_files/docs.css" rel="stylesheet"><link type="text/css" href="Building%20and%20Testing%20AngularJS_files/animations.css" rel="stylesheet"><script src="Building%20and%20Testing%20AngularJS_files/angular.js"></script><script src="Building%20and%20Testing%20AngularJS_files/angular-resource.js"></script><script src="Building%20and%20Testing%20AngularJS_files/angular-route.js"></script><script src="Building%20and%20Testing%20AngularJS_files/angular-cookies.js"></script><script src="Building%20and%20Testing%20AngularJS_files/angular-sanitize.js"></script><script src="Building%20and%20Testing%20AngularJS_files/angular-touch.js"></script><script src="Building%20and%20Testing%20AngularJS_files/angular-animate.js"></script><script src="Building%20and%20Testing%20AngularJS_files/marked.js"></script><script src="Building%20and%20Testing%20AngularJS_files/dropdown-toggle.js"></script><script src="Building%20and%20Testing%20AngularJS_files/lunr.js"></script><script src="Building%20and%20Testing%20AngularJS_files/prettify.js"></script><script src="Building%20and%20Testing%20AngularJS_files/lang-css.js"></script><script src="Building%20and%20Testing%20AngularJS_files/versions-data.js"></script><script src="Building%20and%20Testing%20AngularJS_files/pages-data.js"></script><script src="Building%20and%20Testing%20AngularJS_files/nav-data.js"></script><script src="Building%20and%20Testing%20AngularJS_files/docs.js"></script>
+</head>
+<body>
+  <div id="wrapper">
+    <header scroll-y-offset-element="" class="header header-fixed">
+      <section class="navbar navbar-inverse docs-navbar-primary ng-scope" ng-controller="DocsSearchCtrl">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 header-branding">
+              <a class="brand navbar-brand" href="http://angularjs.org/">
+                <img src="Building%20and%20Testing%20AngularJS_files/angularjs-for-header-only.svg" class="logo" alt="Link to Angular JS Homepage" ng-src="img/angularjs-for-header-only.svg" height="30" width="117">
+              </a>
+              <ul class="nav navbar-nav">
+                <li class="divider-vertical"></li>
+                <li><a href="http://angularjs.org/"><i class="icon-home icon-white"></i> Home</a></li>
+                <li class="divider-vertical"></li>
+                <li class="dropdown ng-isolate-scope">
+                  <a aria-expanded="false" aria-haspopup="true" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="icon-eye-open icon-white"></i> Learn <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li class="disabled"><a href="http://angularjs.org/">Why AngularJS?</a></li>
+                    <li><a href="http://www.youtube.com/user/angularjs">Watch</a></li>
+                    <li><a href="https://docs.angularjs.org/tutorial">Tutorial</a></li>
+                    <li><a href="https://www.madewithangular.com/">Case Studies</a></li>
+                    <li><a href="https://github.com/angular/angular-seed">Seed App project template</a></li>
+                    <li><a href="https://docs.angularjs.org/misc/faq">FAQ</a></li>
+                  </ul>
+                </li>
+                <li class="divider-vertical"></li>
+                <li class="dropdown active ng-isolate-scope">
+                  <a aria-expanded="false" aria-haspopup="true" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="icon-book icon-white"></i> Develop <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a href="https://docs.angularjs.org/tutorial">Tutorial</a></li>
+                    <li><a href="https://docs.angularjs.org/guide">Developer Guide</a></li>
+                    <li><a href="https://docs.angularjs.org/api">API Reference</a></li>
+                    <li><a href="https://docs.angularjs.org/error">Error Reference</a></li>
+                    <li><a href="https://docs.angularjs.org/misc/contribute">Contribute</a></li>
+                    <li><a href="http://code.angularjs.org/">Download</a></li>
+                  </ul>
+                </li>
+                <li class="divider-vertical"></li>
+                <li class="dropdown ng-isolate-scope">
+                  <a aria-expanded="false" aria-haspopup="true" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="icon-comment icon-white"></i> Discuss <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a href="http://blog.angularjs.org/">Blog</a></li>
+                    <li><a href="http://groups.google.com/group/angular">Mailing List</a></li>
+                    <li><a href="http://webchat.freenode.net/?channels=angularjs&amp;uio=d4">Chat Room</a></li>
+                    <li class="divider"></li>
+                    <li><a href="https://twitter.com/#%21/angularjs">Twitter</a></li>
+                    <li><a href="https://plus.google.com/110323587230527980117">Google+</a></li>
+                    <li class="divider"></li>
+                    <li><a href="https://github.com/angular/angular.js">GitHub</a></li>
+                    <li><a href="https://github.com/angular/angular.js/issues">Issue Tracker</a></li>
+                  </ul>
+                </li>
+                <li class="divider-vertical"></li>
+              </ul>
+            </div>
+            <form ng-class="{focus:focus}" class="navbar-search col-md-3 docs-search ng-pristine ng-valid" ng-submit="submit()">
+              <span class="glyphicon glyphicon-search search-icon"></span>
+              <input name="as_q" class="search-query ng-pristine ng-untouched ng-valid ng-empty" placeholder="Click or press / to search" ng-focus="focus=true" ng-blur="focus=false" ng-change="search(q)" ng-model="q" docs-search-input="" autocomplete="off" type="text">
+            </form>
+          </div>
+        </div>
+        <div class="search-results-container ng-hide" ng-show="hasResults">
+          <div class="container">
+            <div class="search-results-frame">
+              <!-- ngRepeat: (key, value) in results track by key -->
+            </div>
+            <a href="" ng-click="hideResults()" class="search-close">
+              <span class="glyphicon glyphicon-remove search-close-icon"></span> Close
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="sup-header">
+        <div class="container main-grid main-header-grid">
+          <div class="grid-left">
+            <div ng-controller="DocsVersionsCtrl" class="picker version-picker ng-scope">
+              <select ng-options="v as ('v' + v.version + (v.isSnapshot ? ' (snapshot)' : '')) group by getGroupName(v) for v in docs_versions" ng-model="docs_version" ng-change="jumpToDocsVersion(docs_version)" class="docs-version-jump ng-pristine ng-untouched ng-valid ng-not-empty"><optgroup label="Latest"><option selected="selected" value="object:8" label="v1.5.7-build.4868 (snapshot)">v1.5.7-build.4868 (snapshot)</option><option value="object:22" label="v1.4.11">v1.4.11</option><option value="object:44" label="v1.3.20">v1.3.20</option><option value="object:90" label="v1.2.29">v1.2.29</option><option value="object:122" label="v1.1.5">v1.1.5</option><option value="object:128" label="v1.0.8">v1.0.8</option></optgroup><optgroup label="v1.5.x"><option value="object:9" label="v1.5.6">v1.5.6</option><option value="object:10" label="v1.5.5">v1.5.5</option><option value="object:11" label="v1.5.4">v1.5.4</option><option value="object:12" label="v1.5.3">v1.5.3</option><option value="object:13" label="v1.5.2">v1.5.2</option><option value="object:14" label="v1.5.1">v1.5.1</option><option value="object:15" label="v1.5.0">v1.5.0</option><option value="object:16" label="v1.5.0-rc.2">v1.5.0-rc.2</option><option value="object:17" label="v1.5.0-rc.1">v1.5.0-rc.1</option><option value="object:18" label="v1.5.0-rc.0">v1.5.0-rc.0</option><option value="object:19" label="v1.5.0-beta.2">v1.5.0-beta.2</option><option value="object:20" label="v1.5.0-beta.1">v1.5.0-beta.1</option><option value="object:21" label="v1.5.0-beta.0">v1.5.0-beta.0</option></optgroup><optgroup label="v1.4.x"><option value="object:23" label="v1.4.10">v1.4.10</option><option value="object:24" label="v1.4.9">v1.4.9</option><option value="object:25" label="v1.4.8">v1.4.8</option><option value="object:26" label="v1.4.7">v1.4.7</option><option value="object:27" label="v1.4.6">v1.4.6</option><option value="object:28" label="v1.4.5">v1.4.5</option><option value="object:29" label="v1.4.4">v1.4.4</option><option value="object:30" label="v1.4.3">v1.4.3</option><option value="object:31" label="v1.4.2">v1.4.2</option><option value="object:32" label="v1.4.1">v1.4.1</option><option value="object:33" label="v1.4.0">v1.4.0</option><option value="object:34" label="v1.4.0-rc.2">v1.4.0-rc.2</option><option value="object:35" label="v1.4.0-rc.1">v1.4.0-rc.1</option><option value="object:36" label="v1.4.0-rc.0">v1.4.0-rc.0</option><option value="object:37" label="v1.4.0-beta.6">v1.4.0-beta.6</option><option value="object:38" label="v1.4.0-beta.5">v1.4.0-beta.5</option><option value="object:39" label="v1.4.0-beta.4">v1.4.0-beta.4</option><option value="object:40" label="v1.4.0-beta.3">v1.4.0-beta.3</option><option value="object:41" label="v1.4.0-beta.2">v1.4.0-beta.2</option><option value="object:42" label="v1.4.0-beta.1">v1.4.0-beta.1</option><option value="object:43" label="v1.4.0-beta.0">v1.4.0-beta.0</option></optgroup><optgroup label="v1.3.x"><option value="object:45" label="v1.3.19">v1.3.19</option><option value="object:46" label="v1.3.18">v1.3.18</option><option value="object:47" label="v1.3.17">v1.3.17</option><option value="object:48" label="v1.3.16">v1.3.16</option><option value="object:49" label="v1.3.15">v1.3.15</option><option value="object:50" label="v1.3.14">v1.3.14</option><option value="object:51" label="v1.3.13">v1.3.13</option><option value="object:52" label="v1.3.12">v1.3.12</option><option value="object:53" label="v1.3.11">v1.3.11</option><option value="object:54" label="v1.3.10">v1.3.10</option><option value="object:55" label="v1.3.9">v1.3.9</option><option value="object:56" label="v1.3.8">v1.3.8</option><option value="object:57" label="v1.3.7">v1.3.7</option><option value="object:58" label="v1.3.6">v1.3.6</option><option value="object:59" label="v1.3.5">v1.3.5</option><option value="object:60" label="v1.3.4">v1.3.4</option><option value="object:61" label="v1.3.3">v1.3.3</option><option value="object:62" label="v1.3.2">v1.3.2</option><option value="object:63" label="v1.3.1">v1.3.1</option><option value="object:64" label="v1.3.0">v1.3.0</option><option value="object:65" label="v1.3.0-rc.5">v1.3.0-rc.5</option><option value="object:66" label="v1.3.0-rc.4">v1.3.0-rc.4</option><option value="object:67" label="v1.3.0-rc.3">v1.3.0-rc.3</option><option value="object:68" label="v1.3.0-rc.2">v1.3.0-rc.2</option><option value="object:69" label="v1.3.0-rc.1">v1.3.0-rc.1</option><option value="object:70" label="v1.3.0-rc.0">v1.3.0-rc.0</option><option value="object:71" label="v1.3.0-beta.19">v1.3.0-beta.19</option><option value="object:72" label="v1.3.0-beta.18">v1.3.0-beta.18</option><option value="object:73" label="v1.3.0-beta.17">v1.3.0-beta.17</option><option value="object:74" label="v1.3.0-beta.16">v1.3.0-beta.16</option><option value="object:75" label="v1.3.0-beta.15">v1.3.0-beta.15</option><option value="object:76" label="v1.3.0-beta.14">v1.3.0-beta.14</option><option value="object:77" label="v1.3.0-beta.13">v1.3.0-beta.13</option><option value="object:78" label="v1.3.0-beta.12">v1.3.0-beta.12</option><option value="object:79" label="v1.3.0-beta.11">v1.3.0-beta.11</option><option value="object:80" label="v1.3.0-beta.10">v1.3.0-beta.10</option><option value="object:81" label="v1.3.0-beta.9">v1.3.0-beta.9</option><option value="object:82" label="v1.3.0-beta.8">v1.3.0-beta.8</option><option value="object:83" label="v1.3.0-beta.7">v1.3.0-beta.7</option><option value="object:84" label="v1.3.0-beta.6">v1.3.0-beta.6</option><option value="object:85" label="v1.3.0-beta.5">v1.3.0-beta.5</option><option value="object:86" label="v1.3.0-beta.4">v1.3.0-beta.4</option><option value="object:87" label="v1.3.0-beta.3">v1.3.0-beta.3</option><option value="object:88" label="v1.3.0-beta.2">v1.3.0-beta.2</option><option value="object:89" label="v1.3.0-beta.1">v1.3.0-beta.1</option></optgroup><optgroup label="v1.2.x"><option value="object:91" label="v1.2.28">v1.2.28</option><option value="object:92" label="v1.2.27">v1.2.27</option><option value="object:93" label="v1.2.26">v1.2.26</option><option value="object:94" label="v1.2.25">v1.2.25</option><option value="object:95" label="v1.2.24">v1.2.24</option><option value="object:96" label="v1.2.23">v1.2.23</option><option value="object:97" label="v1.2.22">v1.2.22</option><option value="object:98" label="v1.2.21">v1.2.21</option><option value="object:99" label="v1.2.20">v1.2.20</option><option value="object:100" label="v1.2.19">v1.2.19</option><option value="object:101" label="v1.2.18">v1.2.18</option><option value="object:102" label="v1.2.17">v1.2.17</option><option value="object:103" label="v1.2.16">v1.2.16</option><option value="object:104" label="v1.2.15">v1.2.15</option><option value="object:105" label="v1.2.14">v1.2.14</option><option value="object:106" label="v1.2.13">v1.2.13</option><option value="object:107" label="v1.2.12">v1.2.12</option><option value="object:108" label="v1.2.11">v1.2.11</option><option value="object:109" label="v1.2.10">v1.2.10</option><option value="object:110" label="v1.2.9">v1.2.9</option><option value="object:111" label="v1.2.8">v1.2.8</option><option value="object:112" label="v1.2.7">v1.2.7</option><option value="object:113" label="v1.2.6">v1.2.6</option><option value="object:114" label="v1.2.5">v1.2.5</option><option value="object:115" label="v1.2.4">v1.2.4</option><option value="object:116" label="v1.2.3">v1.2.3</option><option value="object:117" label="v1.2.2">v1.2.2</option><option value="object:118" label="v1.2.1">v1.2.1</option><option value="object:119" label="v1.2.0">v1.2.0</option><option value="object:120" label="v1.2.0-rc.3">v1.2.0-rc.3</option><option value="object:121" label="v1.2.0-rc.2">v1.2.0-rc.2</option></optgroup><optgroup label="v1.1.x"><option value="object:123" label="v1.1.4">v1.1.4</option><option value="object:124" label="v1.1.3">v1.1.3</option><option value="object:125" label="v1.1.2">v1.1.2</option><option value="object:126" label="v1.1.1">v1.1.1</option><option value="object:127" label="v1.1.0">v1.1.0</option></optgroup><optgroup label="v1.0.x"><option value="object:129" label="v1.0.7">v1.0.7</option><option value="object:130" label="v1.0.6">v1.0.6</option><option value="object:131" label="v1.0.5">v1.0.5</option><option value="object:132" label="v1.0.4">v1.0.4</option><option value="object:133" label="v1.0.3">v1.0.3</option><option value="object:134" label="v1.0.2">v1.0.2</option><option value="object:135" label="v1.0.1">v1.0.1</option><option value="object:136" label="v1.0.0">v1.0.0</option><option value="object:137" label="v1.0.0rc2">v1.0.0rc2</option></optgroup></select>
+            </div>
+          </div>
+          <div class="grid-right">
+            <ul class="nav-breadcrumb">
+              <!-- ngRepeat: crumb in breadcrumb --><li ng-repeat="crumb in breadcrumb" class="nav-breadcrumb-entry naked-list ng-scope">
+                <span class="divider"> /</span>
+                <a href="https://docs.angularjs.org/misc" class="ng-binding" ng-href="misc">Miscellaneous</a>
+              </li><!-- end ngRepeat: crumb in breadcrumb --><li ng-repeat="crumb in breadcrumb" class="nav-breadcrumb-entry naked-list ng-scope">
+                <span class="divider"> /</span>
+                <a href="https://docs.angularjs.org/misc/contribute" class="ng-binding" ng-href="misc/contribute">Develop</a>
+              </li><!-- end ngRepeat: crumb in breadcrumb -->
+            </ul>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <section role="main" class="container main-body">
+      <div class="main-grid main-body-grid">
+        <div class="grid-left">
+          <a class="btn toc-toggle visible-xs" ng-click="toc=!toc">Show / Hide Table of Contents</a>
+          <div class="side-navigation ng-hide" ng-show="toc==true">
+            <ul class="nav-list naked-list">
+              <!-- ngRepeat: navGroup in currentArea.navGroups track by navGroup.name --><li ng-repeat="navGroup in currentArea.navGroups track by navGroup.name" class="nav-index-group ng-scope">
+                <a href="https://docs.angularjs.org/misc" ng-class="navClass(navGroup)" class="nav-index-group-heading ng-binding active">Miscellaneous</a>
+                <ul class="aside-nav">
+                  <!-- ngRepeat: navItem in navGroup.navItems --><li ng-repeat="navItem in navGroup.navItems" ng-class="navClass(navItem)" class="nav-index-listing ng-scope active current">
+                    <!-- ngIf: navItem.extra.href -->
+                    <a class="ng-binding" tabindex="2" ng-class="linkClass(navItem)" href="https://docs.angularjs.org/misc/contribute">Develop</a>
+                  </li><!-- end ngRepeat: navItem in navGroup.navItems --><li ng-repeat="navItem in navGroup.navItems" ng-class="navClass(navItem)" class="nav-index-listing ng-scope active">
+                    <!-- ngIf: navItem.extra.href -->
+                    <a class="ng-binding" tabindex="2" ng-class="linkClass(navItem)" href="https://docs.angularjs.org/misc/downloading">Downloading</a>
+                  </li><!-- end ngRepeat: navItem in navGroup.navItems --><li ng-repeat="navItem in navGroup.navItems" ng-class="navClass(navItem)" class="nav-index-listing ng-scope active">
+                    <!-- ngIf: navItem.extra.href -->
+                    <a class="ng-binding" tabindex="2" ng-class="linkClass(navItem)" href="https://docs.angularjs.org/misc/faq">FAQ</a>
+                  </li><!-- end ngRepeat: navItem in navGroup.navItems --><li ng-repeat="navItem in navGroup.navItems" ng-class="navClass(navItem)" class="nav-index-listing ng-scope active">
+                    <!-- ngIf: navItem.extra.href -->
+                    <a class="ng-binding" tabindex="2" ng-class="linkClass(navItem)" href="https://docs.angularjs.org/misc/started">Getting Started</a>
+                  </li><!-- end ngRepeat: navItem in navGroup.navItems -->
+                </ul>
+              </li><!-- end ngRepeat: navGroup in currentArea.navGroups track by navGroup.name -->
+            </ul>
+            <a href="" ng-click="toc=false" class="toc-close visible-xs">
+              <span class="glyphicon glyphicon-remove toc-close-icon"></span> Close
+            </a>
+          </div>
+        </div>
+        <div class="grid-right">
+          <div class="ng-hide" id="loading" ng-show="loading">Loading...</div>
+          <!-- ngInclude: partialPath --><div style="" class="ng-scope" ng-hide="loading" ng-include="partialPath" autoscroll=""><a href="https://github.com/angular/angular.js/edit/master/docs/content/misc/contribute.ngdoc?message=docs%28misc%2FDevelop%29%3A%20describe%20your%20change..." class="improve-docs btn btn-primary ng-scope"><i class="glyphicon glyphicon-edit">&nbsp;</i>Improve this Doc</a>
+
+
+<h1 class="ng-scope" id="building-and-testing-angularjs">Building and Testing AngularJS</h1>
+<p class="ng-scope">This document describes how to set up your development environment to build and test AngularJS, and
+explains the basic mechanics of using <code><span class="pln">git</span></code>, <code><span class="pln">node</span></code>, <code><span class="pln">npm</span></code>, <code><span class="pln">grunt</span></code>, and <code><span class="pln">bower</span></code>.</p>
+<p class="ng-scope">See the <a href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md">contributing guidelines</a>
+for how to contribute your own code to AngularJS.</p>
+<ol class="ng-scope">
+<li><a href="https://docs.angularjs.org/misc/contribute#installing-dependencies">Installing Dependencies</a></li>
+<li><a href="https://docs.angularjs.org/misc/contribute#forking-angular-on-github">Forking Angular on Github</a></li>
+<li><a href="https://docs.angularjs.org/misc/contribute#building-angularjs">Building AngularJS</a></li>
+<li><a href="https://docs.angularjs.org/misc/contribute#running-a-local-development-web-server">Running a Local Development Web Server</a></li>
+<li><a href="https://docs.angularjs.org/misc/contribute#running-the-unit-test-suite">Running the Unit Test Suite</a></li>
+<li><a href="https://docs.angularjs.org/misc/contribute#running-the-end-to-end-test-suite">Running the End-to-end Test Suite</a></li>
+</ol>
+<h2 class="ng-scope" id="installing-dependencies">Installing Dependencies</h2>
+<p class="ng-scope">Before you can build AngularJS, you must install and configure the following dependencies on your
+machine:</p>
+<ul class="ng-scope">
+<li><p><a href="http://git-scm.com/">Git</a>: The <a href="https://help.github.com/articles/set-up-git">Github Guide to
+Installing Git</a> is a good source of information.</p>
+</li>
+<li><p><a href="http://nodejs.org/">Node.js v4.x</a>: We use Node to 
+generate the documentation, run a
+development web server, run tests, and generate distributable files. 
+Depending on your system, you can install Node either from source or as a
+pre-packaged bundle. (Currently our build does not work properly on Node
+ v5 or greater - please use v4.x.)</p>
+</li>
+<li><p><a href="http://www.java.com/">Java</a>: We minify JavaScript using our
+<a href="https://developers.google.com/closure/">Closure Tools</a> jar. Make sure you have Java (version 7 or higher) installed
+and included in your <a href="http://docs.oracle.com/javase/tutorial/essential/environment/paths.html">PATH</a> variable.</p>
+</li>
+<li><p><a href="http://gruntjs.com/">Grunt</a>: We use Grunt as our build system. Install the grunt command-line tool globally with:</p>
+<pre><code class="lang-shell"><span class="pln">npm install </span><span class="pun">-</span><span class="pln">g grunt</span><span class="pun">-</span><span class="pln">cli</span></code></pre>
+</li>
+</ul>
+<h2 class="ng-scope" id="forking-angular-on-github">Forking Angular on Github</h2>
+<p class="ng-scope">To create a Github account, follow the instructions <a href="https://github.com/signup/free">here</a>.
+Afterwards, go ahead and <a href="http://help.github.com/forking">fork</a> the <a href="https://github.com/angular/angular.js">main AngularJS repository</a>.</p>
+<h2 class="ng-scope" id="building-angularjs">Building AngularJS</h2>
+<p class="ng-scope">To build AngularJS, you clone the source code repository and use Grunt to generate the non-minified and
+minified AngularJS files:</p>
+<pre class="ng-scope"><code class="lang-shell"><span class="com"># Clone your Github repository:</span><span class="pln">
+git clone </span><span class="str">"git@github.com:&lt;github username&gt;/angular.js.git"</span><span class="pln">
+
+</span><span class="com"># Go to the AngularJS directory:</span><span class="pln">
+cd angular</span><span class="pun">.</span><span class="pln">js
+
+</span><span class="com"># Add the main AngularJS repository as an upstream remote to your repository:</span><span class="pln">
+git remote add upstream </span><span class="str">"https://github.com/angular/angular.js.git"</span><span class="pln">
+
+</span><span class="com"># Install node.js dependencies:</span><span class="pln">
+npm install
+
+</span><span class="com"># Install bower components:</span><span class="pln">
+bower install
+
+</span><span class="com"># Build AngularJS:</span><span class="pln">
+grunt </span><span class="kwd">package</span></code></pre>
+<div class="alert alert-warning ng-scope">
+<strong>Note:</strong> If you're using Windows, you must use an elevated command prompt (right click, run as
+Administrator). This is because <code><span class="pln">grunt </span><span class="kwd">package</span></code> creates some symbolic links.
+</div>
+
+<div class="alert alert-warning ng-scope">
+<strong>Note:</strong> If you're using Linux, and npm install fails with the message
+'Please try running this command again as root/Administrator.', you may need to globally install grunt and bower:
+<ul>
+<li>sudo npm install -g grunt-cli</li>
+<li>sudo npm install -g bower</li>
+</ul>
+
+</div>
+
+<p class="ng-scope">The build output can be located under the <code><span class="pln">build</span></code> directory. It consists of the following files and
+directories:</p>
+<ul class="ng-scope">
+<li><p><code><span class="pln">angular</span><span class="pun">-&lt;</span><span class="pln">version</span><span class="pun">&gt;.</span><span class="pln">zip</span></code> — The complete zip file, containing all of the release build
+artifacts.</p>
+</li>
+<li><p><code><span class="pln">angular</span><span class="pun">.</span><span class="pln">js</span></code> — The non-minified <code><span class="pln">angular</span></code> script.</p>
+</li>
+<li><p><code><span class="pln">angular</span><span class="pun">.</span><span class="pln">min</span><span class="pun">.</span><span class="pln">js</span></code> —  The minified <code><span class="pln">angular</span></code> script.</p>
+</li>
+<li><p><code><span class="pln">angular</span><span class="pun">-</span><span class="pln">scenario</span><span class="pun">.</span><span class="pln">js</span></code> — The <code><span class="pln">angular</span></code> End2End test runner.</p>
+</li>
+<li><p><code><span class="pln">docs</span><span class="pun">/</span></code> — A directory that contains all of the files needed to run <code><span class="pln">docs</span><span class="pun">.</span><span class="pln">angularjs</span><span class="pun">.</span><span class="pln">org</span></code>.</p>
+</li>
+<li><p><code><span class="pln">docs</span><span class="pun">/</span><span class="pln">index</span><span class="pun">.</span><span class="pln">html</span></code> — The main page for the documentation.</p>
+</li>
+<li><p><code><span class="pln">docs</span><span class="pun">/</span><span class="pln">docs</span><span class="pun">-</span><span class="pln">scenario</span><span class="pun">.</span><span class="pln">html</span></code> — The End2End test runner for the documentation application.</p>
+</li>
+</ul>
+<h2 class="ng-scope" id="running-a-local-development-web-server">Running a Local Development Web Server</h2>
+<p class="ng-scope">To debug code and run end-to-end tests, it is often useful to have a local HTTP server. For this purpose, we have
+made available a local web server based on Node.js.</p>
+<ol class="ng-scope">
+<li><p>To start the web server, run:</p>
+<pre><code class="lang-shell"><span class="pln">grunt webserver</span></code></pre>
+</li>
+<li><p>To access the local server, enter the following URL into your web browser:</p>
+<pre><code class="lang-text"><span class="pln">http</span><span class="pun">:</span><span class="com">//localhost:8000/</span></code></pre>
+<p>By default, it serves the contents of the AngularJS project directory.</p>
+</li>
+<li><p>To access the locally served docs, visit this URL:</p>
+<pre><code class="lang-text"><span class="pln">http</span><span class="pun">:</span><span class="com">//localhost:8000/build/docs/</span></code></pre>
+</li>
+</ol>
+<h2 class="ng-scope" id="running-the-unit-test-suite">Running the Unit Test Suite</h2>
+<p class="ng-scope">We write unit and integration tests with Jasmine and execute them with Karma. To run all of the
+tests once on Chrome run:</p>
+<pre class="ng-scope"><code class="lang-shell"><span class="pln">grunt test</span><span class="pun">:</span><span class="pln">unit</span></code></pre>
+<p class="ng-scope">To run the tests on other browsers (Chrome, ChromeCanary, Firefox, Opera and Safari are pre-configured) use:</p>
+<pre class="ng-scope"><code class="lang-shell"><span class="pln">grunt test</span><span class="pun">:</span><span class="pln">unit </span><span class="pun">--</span><span class="pln">browsers </span><span class="typ">Opera</span><span class="pun">,</span><span class="typ">Firefox</span></code></pre>
+<p class="ng-scope">Note there should be <em>no spaces between browsers</em>. <code><span class="typ">Opera</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Firefox</span></code> is INVALID.</p>
+<p class="ng-scope">During development, however, it's more productive to continuously run unit tests every time the source or test files
+change. To execute tests in this mode run:</p>
+<ol class="ng-scope">
+<li><p>To start the Karma server, capture Chrome browser and run unit tests, run:</p>
+<pre><code class="lang-shell"><span class="pln">grunt autotest</span></code></pre>
+</li>
+<li><p>To capture more browsers, open this URL in the desired browser (URL might be different if you have multiple instance
+of Karma running, read Karma's console output for the correct URL):</p>
+<pre><code class="lang-text"><span class="pln">http</span><span class="pun">:</span><span class="com">//localhost:9876/</span></code></pre>
+</li>
+<li><p>To re-run tests just change any source or test file.</p>
+</li>
+</ol>
+<p class="ng-scope">To learn more about all of the preconfigured Grunt tasks run:</p>
+<pre class="ng-scope"><code class="lang-shell"><span class="pln">grunt </span><span class="pun">--</span><span class="pln">help</span></code></pre>
+<h2 class="ng-scope" id="running-the-end-to-end-test-suite">Running the End-to-end Test Suite</h2>
+<p class="ng-scope">Angular's end to end tests are run with Protractor. Simply run:</p>
+<pre class="ng-scope"><code class="lang-shell"><span class="pln">grunt test</span><span class="pun">:</span><span class="pln">e2e</span></code></pre>
+<p class="ng-scope">This will start the webserver and run the tests on Chrome.</p>
+
+
+</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="pull-right"><a back-to-top="">Back to top</a></p>
+
+        <p>
+          Super-powered by Google  ©2010-2016
+          ( <a href="https://github.com/angular/angular.js/blob/master/CHANGELOG.md#1.5.6" class="ng-binding" id="version" ng-href="https://github.com/angular/angular.js/blob/master/CHANGELOG.md#1.5.6" ng-bind-template="v1.5.6  arrow-stringification" title="Changelog of this version of Angular JS">v1.5.6  arrow-stringification</a>
+          )
+        </p>
+        <p>
+          Code licensed under
+          <a href="https://github.com/angular/angular.js/blob/master/LICENSE" target="_blank">The MIT License</a>.
+          Documentation licensed under
+          <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.
+        </p>
+      </div>
+    </footer>
+  </div>
+
+
+</body></html>

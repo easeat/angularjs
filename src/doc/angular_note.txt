@@ -1,0 +1,70 @@
+ng-app指令标记了AngularJS脚本的作用域
+ng-app指令标记了AngularJS脚本的作用域，在<html>中添加ng-app属性即说明整个<html>都是AngularJS脚本作用域。开发者也可以在局部使用ng-app指令，如<div ng-app>，则AngularJS脚本仅在该<div>中运行。
+==============================================================================================================================================================================
+
+$location
+
+• DO NOT call it all the time. Calling $apply when AngularJS is happily ticking away
+(in its $digest cycle, as we call it) will cause an exception. So “better safe than sorry”
+is not the approach you want to use.
+
+• DO CALL it when controls outside of AngularJS (DOM events, external callbacks
+such as jQuery UI controls, and so on) are calling AngularJS functions. At that
+point, you want to tell AngularJS to update itself (the models, the views, and so on),
+and $apply does just that.
+
+• Whenever possible, execute your code or function by passing it to $apply, rather
+than executing the function and then calling $apply(). For example, execute the
+following code:
+$scope.$apply(function() {
+$scope.variable1 = 'some value';
+executeSomeAction();
+});
+
+instead of the following:
+$scope.variable1 = 'some value';
+executeSomeAction();
+$scope.$apply();
+
+While both of these will have the same effect, they differ in one significant way.
+The first will capture any errors that happen when executeSomeAction is called, while
+the latter will quietly ignore any such errors. You will get error notifications from AngularJS
+only when you do the first.
+
+
+Let us take a look at how the $location service would behave, if the URL in the browser
+was http://www.host.com/base/index.html#!/path?param1=value1#hashValue.
+Table 7-1. Functions on the $location service
+
+Getter Function	Getter Value								Setter Function
+absUrl()	http://www.host.com/base/index.html#!/path?param1=value1#hashValue	N/A
+hash()		hashValue								hash('newHash')
+host()		www.host.com								N/A
+path()		/path									path('/newPath')
+protocol()	http									N/A
+search()	{'a’: ‘b'}								search({'c’: ‘def'})
+url()		/path?param1=value1?hashValue						url('/newPath?p2=v2')
+
+==============================================================================================================================================================================
+
+Convenience Methods
+
+What can you do with a module? We can instantiate controllers, directives, filters, and
+services, but the module class allows you to do more, as you can see in Table 7-2:
+Table 7-2. Module configuration methods
+API Method				Description
+config(configFn)			Use this method to register work that needs to be done when the module is loading.
+constant(name, object)			This happens first, so you can declare all your constants app-wide, and have
+					them available at all configuration (the first method in this list) and instance
+					methods (all methods from here on, like controller, service, and so on).
+controller(name, constructor)		We have seen a lot of examples of this; it basically sets up a controller for use.
+directive(name, directiveFactory)	As discussed in Chapter 6, this allows you to create directives within your
+					app.
+filter(name, filterFactory)		Allows you to create named AngularJS filters, as discussed in previous
+					chapters.
+run(initializationFn)			Use this method when you want to perform work that needs to happen once
+					the injector is set up, right before your application is available to the user.
+value(name, object)			Allows values to be injected across the application.
+service(name, serviceFactory)		Covered in the next section.
+factory(name, factoryFn)		Covered in the next section.
+provider(name, providerFn)		Covered in the next section.
