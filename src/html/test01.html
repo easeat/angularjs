@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/angular.min.js"></script>
+<script type="text/javascript">
+var myApp = angular.module('myApp',[]);
+// var myCtrl = myApp.controller('myCtrl',['$scope',function($scope){
+// }]);
+</script>
+</head>
+<body ng-app='myApp' ng-init='quantity=1;cost=5;person={name:"Jack",age:18};arr=[1,2,3,4,5]'>
+	总价：{{quantity*cost}}<br>
+	总价：<span ng-bind='quantity*cost'></span><br>
+	json名字：{{person.name}}<br>
+	数组:{{arr[0]}}
+</body>
+</html>

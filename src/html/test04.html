@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src='../js/angular.min.js'></script>
+<script type="text/javascript" src='../js/controller01.js'></script>
+</head>
+<body ng-app='app' ng-controller='ctrl'>
+<p>{{firstname | uppercase}}</p>
+<p>{{firstname | lowercase}}</p>
+<p>{{total | currency}}</p>
+<ul>
+	<li ng-repeat='p in arr | orderBy:"age"'>
+		{{p.name+'  '+p.age}}
+	</li>
+</ul>
+	<input ng-model='f'>
+<ul>
+	<li ng-repeat='p in arr |filter:f | orderBy:"age"'>
+		{{p.name+'  '+p.age}}
+	</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/angular.min.js"></script>
+<script type="text/javascript">
+var myApp = angular.module('myApp',[]);
+myApp.directive('myDirective',function(){
+	return {
+		restrict: 'EACM',
+// 		restrict: 'E',//元素
+// 		restrict: 'A',//属性
+// 		restrict: 'C',//class
+// 		restrict: 'M',//注释
+		replace: true,
+		template:'<h1>我的自定义指令</h1>'
+	}
+})
+// var myCtrl = myApp.controller('myCtrl',['$scope',function($scope){
+// }]);
+</script>
+</head>
+<body ng-app='myApp'>
+	<div ng-init='name="Jack"'>
+		<p>
+			<input ng-model='name'>
+		</p>
+		<p>姓名：{{name}}</p>
+	</div>
+	<div ng-init='quantity=1;cost=5'>
+		<p><input ng-model='quantity'></p>
+		<p><input ng-model='cost'></p>
+		<p>总价：{{quantity*1+cost*1}}</p>
+	</div>
+	<div ng-init='arr=["Jack","Rose","小明"]'>
+		<ul>
+			<li ng-repeat='name in arr'>{{name}}</li>
+		</ul>
+	</div>
+	<div ng-init='objArr=[{name:"Jack",age:18},{name:"Rose",age:19},{name:"小明",age:20}]'>
+		<ul>
+			<li ng-repeat='person in objArr'>{{person.name+' ' +person.age}}</li>
+		</ul>
+	</div>
+	<div>
+		<my-directive></my-directive>
+		<div my-directive></div>
+		<div class='my-directive'></div>
+		<!-- directive: my-directive -->
+		
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src='../js/angular.min.js'></script>
+<script type="text/javascript">
+var myApp = angular.module('myApp',[]);
+var myCtrl = myApp.controller('myCtrl',function($scope,$rootScope){
+	$scope.name1 = 'Jack';
+	$scope.name2 = 'Tom';
+	$scope.name4 = 'Jerry';
+	$rootScope.name3 = 'Rose';
+})
+var myCtrl2 = myApp.controller('myCtrl2',['$scope',function($scope){
+	$scope.name1 = 'Jack1';
+	$scope.name2 = 'Tom2';
+}])
+</script>
+<style type="text/css">
+/* input.ng-invalid{ */
+/* 	background-color: red; */
+/* } */
+
+input.ng-pristine{
+	background-color: red;
+}
+select.ng-invalid{
+	background-color: red;
+}
+</style>
+</head>
+<body ng-app='myApp'>
+	<div  ng-controller='myCtrl'>
+		name1:<input ng-model='name4'>
+	</div>
+	<div  ng-controller='myCtrl2'>
+		name1:<input ng-model='name4'>
+	</div>
+	
+	<div>
+		<form action="" name="myForm">
+		<input type="email" ng-model='myEmail2' name="myEmail">
+		<span ng-show='myForm.myEmail.$error.email'>邮箱输入不正确</span>
+		</form>
+	</div>
+	<div>
+		<form action="" name="myForm2" ng-init='myEmail4="aa@bb.cc"'>
+			<p><input type="email" name="myEmail3" ng-model=myEmail4></p>
+			<h1>状态</h1>
+			<p>valid:{{myForm2.myEmail3.$valid}}</p>
+			<p>dirty:{{myForm2.myEmail3.$dirty}}</p>
+			<p>touched:{{myForm2.myEmail3.$touched}}</p>
+			<p>error:{{myForm2.myEmail3.$error.email}}</p>
+		</form>
+	</div>
+	<div>
+		<form action="" name="myForm3">
+			<input name="myName" ng-model='myName' required="required">
+			<select ng-model='sex' name='sex' required="required">
+				<option value="">请选择</option>
+				<option value="1">男</option>
+				<option value="0">女</option>
+			</select>
+		</form>
+	</div>
+</body>
+</html>

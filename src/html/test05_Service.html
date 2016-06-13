@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src='../js/angular.min.js'></script>
+<script type="text/javascript" src='../js/test05.js'></script>
+</head>
+<body ng-app='app' ng-controller='ctrl'>
+	<p>当前页面url地址，absUrl:{{absUrl}}</p>
+	
+	<p>{{word}}</p>
+	
+	<p>{{currTime}}</p>
+	
+	<p><input ng-model='money'></p>
+	<p>{{money | moneyFormat}}</p>
+</body>
+</html>
