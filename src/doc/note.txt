@@ -70,3 +70,19 @@ $dirty 	表单有填写记录
 $valid 	字段内容合法的
 $invalid 	字段内容是非法的
 $pristine 	表单没有填写记录
+
+angular.lowercase() 	转换字符串为小写
+angular.uppercase() 	转换字符串为大写
+angular.isString() 	判断给定的对象是否为字符串，如果是返回 true。
+angular.isNumber() 	判断给定的对象是否为数字，如果是返回 true。
+
+
+AngularJS 提供很好的依赖注入机制。以下5个核心组件用来作为依赖注入：
+    value
+    factory
+    service
+    provider
+    constant
+    
+factory 是一个函数用于返回值。在 service 和 controller 需要时创建。
+通常我们使用 factory 函数来计算或返回值。
